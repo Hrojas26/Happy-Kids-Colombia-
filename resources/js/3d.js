@@ -31,6 +31,7 @@ loader.load('/three/car.glb', function(gltf) {
     scene.add(ambientLight);
 
 
+
     model.position.y = -1;
     scene.add(model);
 }, undefined, function(error) {

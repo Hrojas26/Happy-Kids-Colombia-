@@ -1,7 +1,7 @@
 div#container3D{
     position: absolute;
-    bottom: 16%;
-    left: 35%;
+    bottom: 14%;
+    left: 56%;
     width: 350px;
     height: 350px;
     cursor: pointer;
@@ -26,4 +26,29 @@ div#container3D{
 }
 .touch>img{
     width: 100%;
+}
+.cardbanner {
+    position: absolute;
+    top: 38%;
+    left: 4%;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+a.btn.btn-dark {
+    width: 70%;
+    background-color: #C191CF;
+    border: solid 0.5px rgba(255, 255, 255, 0.178);
+    transition: width 0.3s; /* Transición suave de la animación */
+}
+.btn.btn-dark:hover {
+    width: 90%; /* Ancho aumentado al pasar el mouse por encima */
+    background-color: #C191CF;
+    border: solid 0.5px rgba(255, 255, 255, 0.178);
 }
