@@ -1,0 +1,29 @@
+div#container3D{
+    position: absolute;
+    bottom: 16%;
+    left: 35%;
+    width: 350px;
+    height: 350px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.rox{
+    position: relative;
+    overflow: visible;
+}
+.bannerp{
+    width: 100% !important;
+}
+.touch{
+    width: 60px;
+    height: 60px;
+    bottom: -75%;
+    left: -43%;
+    position: relative;
+}
+.touch>img{
+    width: 100%;
+}
