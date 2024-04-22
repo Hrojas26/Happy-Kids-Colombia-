@@ -1,9 +1,9 @@
 div#container3D{
     position: absolute;
     bottom: 14%;
-    left: 56%;
-    width: 350px;
-    height: 350px;
+    left: 50%;
+    width: 450px;
+    height: 450px;
     cursor: pointer;
     justify-content: center;
     align-items: center;
@@ -13,6 +13,9 @@ div#container3D{
 .rox{
     position: relative;
     overflow: visible;
+}
+.rox>.row{
+    margin-top: 0px;
 }
 .bannerp{
     width: 100% !important;

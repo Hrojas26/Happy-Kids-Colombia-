@@ -11,3 +11,45 @@ body{
 .grow-on-hover:hover {
     transform: scale(1.02);
 }
+.rowinfo{
+    display: flex;
+    justify-content: center;
+}
+.rowinfo>.card{
+ margin: 0px 10px 0px 10px;
+}
+.TitleCardHome{
+    font-size: 30px;
+    align-items: center;
+    display: inline-flex;
+}
+.check{
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+.check>img{
+    width: 100%;
+}
+nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm {
+    background: linear-gradient(to right, #A46FD9, #D1A4CB) !important;
+}
+.navbar-brand
+{
+    color: whitesmoke !important;
+}
+a.nav-link {
+    color: whitesmoke;
+}
+
+.alert-info,.alert-warning,.alert-success {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: black;
+    color: whitesmoke;
+    border: none;
+    margin: 0px;
+    padding: 3px;
+    border-radius: 0px !important;
+}

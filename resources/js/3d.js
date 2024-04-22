@@ -32,7 +32,7 @@ loader.load('/three/car.glb', function(gltf) {
 
 
 
-    model.position.y = -1;
+    model.position.y = -1.2;
     scene.add(model);
 }, undefined, function(error) {
     console.error(error);

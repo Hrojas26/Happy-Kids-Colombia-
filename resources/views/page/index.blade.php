@@ -96,7 +96,7 @@
                 <img src="{{ asset('img/card3.jpg') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Reduce, Reutiliza, Recicla</h5>
-                  <p class="card-text">Donar juguetes usados promueve la sostenibilidad ambiental al reducir residuos y fomentar la reutilización. Contribuyes a cuidar el planeta al dar una segunda vida a objetos que de otro modo podrían terminar en un vertedero.</p>
+                  <p class="card-text">Donar juguetes usados promueve la sostenibilidad ambiental al reducir residuos y fomentar la reutilización. Contribuyes a cuidar el planeta al dar una segunda vida a los juguetes.</p>
                 </div>
               </div>
             </div>
@@ -112,6 +112,32 @@
         </div>
     </div>
 </div>
+
+<div class="rowinfo">
+
+<div class="card grow-on-hover" style="width: 22rem;">
+    <div class="card-body">
+      <h5 class="card-title TitleCardHome">1 <img class="check" src="{{ asset('img/check.png') }}" alt=""> </h5>
+      <p class="card-text">Completa el proceso de registro en nuestra plataforma proporcionando tu información básica.</p>
+    </div>
+  </div>
+  <div class="card grow-on-hover" style="width: 22rem;">
+    <div class="card-body">
+      <h5 class="card-title TitleCardHome">2 <img class="check" src="{{ asset('img/check.png') }}" alt=""></h5>
+      <p class="card-text">Una vez registrado, dona al menos 10 juguetes a través de nuestra plataforma. (puedes donar de 1 en adelante)</p>
+    </div>
+  </div>
+  <div class="card grow-on-hover" style="width: 22rem;">
+    <div class="card-body">
+      <h5 class="card-title TitleCardHome">3 <img class="check" src="{{ asset('img/check.png') }}" alt=""></h5>
+      <p class="card-text">Después de completar la donación, recibirás un cupón de descuento exclusivo como agradecimiento por tu generosidad.</p>
+    </div>
+</div>
+
+
+</div>
+
+
 
 </body>
 </html>
