@@ -41,6 +41,12 @@
          </div>
     </div>
 
+    <div class="row">
+        <H1 class="title"> Bienvenido a happy kids colombia.</H1>
+        <p>
+            ¡Bienvenido a nuestra plataforma de donaciones de juguetes! Aquí, encontrarás una forma fácil y segura de hacer una diferencia en la vida de niños necesitados. Únete a nosotros en nuestro esfuerzo por llevar alegría y esperanza a aquellos que más lo necesitan. ¡Haz tu donación hoy y sé parte del cambio! </p>
+    </div>
+
 </div>
 
 {{-- END SLIDER --}}
