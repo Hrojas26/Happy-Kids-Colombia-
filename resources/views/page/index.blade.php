@@ -36,7 +36,7 @@
                 <div class="card-body">
                   <h5 class="card-title">BIENVENIDO A HAPPY KIDS COLOMBIA</h5>
                   <p class="card-text">"La magia de la infancia está en tus manos."</p>
-                  <a href="#" class="btn btn-dark">donar un juguete</a>
+                  <a href="#" class="btn btn-dark">¡ DONA UN JUGUETE !</a>
                 </div>
               </div>
         </div>
@@ -111,33 +111,11 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="rowinfo">
-
-<div class="card grow-on-hover" style="width: 22rem;">
-    <div class="card-body">
-      <h5 class="card-title TitleCardHome">1 <img class="check" src="{{ asset('img/check.png') }}" alt=""> </h5>
-      <p class="card-text">Completa el proceso de registro en nuestra plataforma proporcionando tu información básica.</p>
-    </div>
-  </div>
-  <div class="card grow-on-hover" style="width: 22rem;">
-    <div class="card-body">
-      <h5 class="card-title TitleCardHome">2 <img class="check" src="{{ asset('img/check.png') }}" alt=""></h5>
-      <p class="card-text">Una vez registrado, dona al menos 10 juguetes a través de nuestra plataforma. (puedes donar de 1 en adelante)</p>
-    </div>
-  </div>
-  <div class="card grow-on-hover" style="width: 22rem;">
-    <div class="card-body">
-      <h5 class="card-title TitleCardHome">3 <img class="check" src="{{ asset('img/check.png') }}" alt=""></h5>
-      <p class="card-text">Después de completar la donación, recibirás un cupón de descuento exclusivo como agradecimiento por tu generosidad.</p>
-    </div>
-</div>
-
 
 </div>
+@include('components.section')
 
-
+@include('components.footerPage')
 
 </body>
 </html>

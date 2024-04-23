@@ -74,10 +74,13 @@
                 </div>
             </div>
         </nav>
+        @include('components.cinta')
 
         <main class="py-4">
             @yield('content')
         </main>
+
     </div>
+    @include('components.footerPage')
 </body>
 </html>
