@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
 @include('components.headerPage')
+@if ($message)
+    <div class="alert alert-info" role="alert">
+        {{ $message }}
+    </div>
+@endif
+@foreach ($gifts as $gift)
 @include('components.card')
-
+@endforeach
 @include('components.footerPage')
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 </body>

@@ -1,8 +1,12 @@
+@foreach($gifts as $gift)
 <div class="card" style="width: 18rem;">
-  <h5 class="card-title">Card title</h5>
+  <h5 class="card-title">{{ $gift->name }}</h5>
   <div class="card-body">
-  <img src="..." class="card-img-top" alt="...">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <img src="{{ $gift->urlimage }}" class="card-img-top" alt="...">
+    <p class="card-text">{{ $gift->description }}</p>
+    <p class="card-text">Empresa: {{ $gift->company }}</p>
+    <p class="card-text">Fecha de expiración: {{ $gift->expirationDate }}</p>
     <a href="#" class="btn btn-primary">Reclama</a>
   </div>
 </div>
+@endforeach
