@@ -1,0 +1,153 @@
+.title{
+    margin-top: 10px;
+}
+body{
+    overflow-x: hidden;
+}
+.grow-on-hover {
+    transition: transform 0.3s ease;
+}
+
+.grow-on-hover:hover {
+    transform: scale(1.02);
+}
+.rowinfo{
+    display: flex;
+    justify-content: center;
+}
+.rowinfo>.card{
+ margin: 0px 10px 0px 10px;
+}
+.TitleCardHome{
+    font-size: 30px;
+    align-items: center;
+    display: inline-flex;
+}
+.check{
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+.check>img{
+    width: 100%;
+}
+nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm {
+    background: linear-gradient(to right, #A46FD9, #D1A4CB) !important;
+}
+.navbar-brand
+{
+    color: whitesmoke !important;
+}
+a.nav-link {
+    color: whitesmoke;
+}
+
+.alert-info,.alert-warning,.alert-success {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: black;
+    color: whitesmoke;
+    border: none;
+    margin: 0px;
+    padding: 3px;
+    border-radius: 0px !important;
+}
+.row.row-cols-1.row-cols-md-2.g-4 {
+    margin-bottom: 25px;
+}
+#card-noneBorder{
+    border: none;
+    width: 65% !important;
+}
+.imgBox{
+    width: 100%;
+}
+.imgBox2{
+    width: 109%;
+}
+.rowSection{
+    display: flex;
+    align-items: center;
+}
+.colCenter{
+    display: flex;
+    justify-content: center;
+    width: 47%;
+}
+.colBorder{
+    padding: 0px ;
+    position: relative;
+}
+.backBox{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #B686D2;
+}
+.frontBox{
+    position: absolute;
+    left: 0px;
+    top: -12px;
+}
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Aplicación de la animación a la imagen */
+.floating-image {
+    animation: floating 2.5s ease-in-out infinite;
+}
+.card-title
+{
+    font-weight: bold;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .modal-content {
+    background-color: white;
+    border: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-header {
+    border: none;
+
+  }
+  .modal-title {
+    color:black;
+  }
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+  #myModal img {
+    max-width: 100%;
+    height: auto;
+  }
+#PopUpHome{
+    display: none;
+}
+.fade:not(.show) {
+    opacity: 0 !important;
+}
+
+.modal {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: auto !important;
+}

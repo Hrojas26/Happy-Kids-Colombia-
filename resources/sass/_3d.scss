@@ -1,0 +1,58 @@
+div#container3D{
+    position: absolute;
+    bottom: 14%;
+    left: 50%;
+    width: 450px;
+    height: 450px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+}
+.rox{
+    position: relative;
+    overflow: visible;
+}
+.rox>.row{
+    margin-top: 0px;
+}
+.bannerp{
+    width: 100% !important;
+}
+.touch{
+    width: 60px;
+    height: 60px;
+    bottom: -75%;
+    left: -43%;
+    position: relative;
+}
+.touch>img{
+    width: 100%;
+}
+.cardbanner {
+    position: absolute;
+    top: 38%;
+    left: 4%;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+a.btn.btn-dark {
+    width: 70%;
+    background-color: #C191CF;
+    border: solid 0.5px rgba(255, 255, 255, 0.178);
+    transition: width 0.3s; /* Transición suave de la animación */
+}
+.btn.btn-dark:hover {
+    width: 90%; /* Ancho aumentado al pasar el mouse por encima */
+    background-color: #C191CF;
+    border: solid 0.5px rgba(255, 255, 255, 0.178);
+}
