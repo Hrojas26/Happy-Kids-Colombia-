@@ -13,7 +13,7 @@
                 <div class="card-body">
                   <h5 class="card-title">¿Quiénes somos?</h5>
                   <p class="card-text">¡Hola! Soy el encargado de crear cosas geniales aquí en Happy Kids Colombia. Mi misión es usar la tecnología para conectar a donantes con quienes lo necesitan.</p>
-                  <a href="#" class="btn btn-primary">¡ VAMOS !</a>
+                  <a href="#" class="btn btn-dark">¡ VAMOS !</a>
                 </div>
               </div>
         </div>

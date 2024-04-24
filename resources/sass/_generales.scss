@@ -110,3 +110,44 @@ a.nav-link {
 {
     font-weight: bold;
 }
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .modal-content {
+    background-color: white;
+    border: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-header {
+    border: none;
+
+  }
+  .modal-title {
+    color:black;
+  }
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+  #myModal img {
+    max-width: 100%;
+    height: auto;
+  }
+#PopUpHome{
+    display: none;
+}
+.fade:not(.show) {
+    opacity: 0 !important;
+}
+
+.modal {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: auto !important;
+}

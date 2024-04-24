@@ -8,23 +8,19 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <!-- Importación de Three.js desde CDN -->
-    <script type="importmap">
-        {
-          "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@r163/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@r163/examples/jsm/"
-          }
-        }
-    </script>
-
+  
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
 @include('components.headerPage')
+{{-- popup --}}
+@include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','imagePopUp' => asset('img/1.jpg')])
+{{-- popup end --}}
 
-{{-- SLIDER --}}
+
+
+
 <div class="rox">
 
     <div class="row">
@@ -33,6 +29,7 @@
             <div id="container3D">
             </div>
             <div class="card w-40 cardbanner">
+                <!-- Ejemplo de uso en una vista Blade -->
                 <div class="card-body">
                   <h5 class="card-title">BIENVENIDO A HAPPY KIDS COLOMBIA</h5>
                   <p class="card-text">"La magia de la infancia está en tus manos."</p>
