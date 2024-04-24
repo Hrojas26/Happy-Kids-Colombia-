@@ -7,15 +7,19 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-  
     <!-- Scripts -->
+    <script
+        src="https://code.jquery.com/jquery-3.0.0.min.js"
+        integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+        crossorigin="anonymous">
+    </script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <!-- Scripts -->
 </head>
 <body>
 @include('components.headerPage')
 {{-- popup --}}
-@include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','imagePopUp' => asset('img/1.jpg')])
+@include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','videoUrl' => asset('img/robot.mp4'),'modalDescripcion' => '¡ Hola bienvenido a Happy Kids Colombia ! explora nuestra web y juega con nuestros objetos 3D, oprime y arrastra.'])
 {{-- popup end --}}
 
 
@@ -110,6 +114,8 @@
     </div>
 
 </div>
+<!-- Agrega este script después de cargar jQuery y Bootstrap -->
+
 @include('components.section')
 
 @include('components.footerPage')
