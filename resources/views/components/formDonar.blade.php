@@ -4,7 +4,7 @@
                     <div class="card-header">DONA UNA SONRISA</div>
 
                     <div class="card-body">
-                        <form method="POST" action="">
+                        <form method="POST" action="{{ route('donaciones.store') }}">
                             @csrf
 
                             <div class="form-group">
@@ -22,7 +22,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="numberToys">Cantidad de juguetes a donar</label>
-                                <input id="numberToys" type="number" class="form-control" name="email" required>
+                                <input id="numberToys" type="number" class="form-control" name="numberToys" required>
                             </div>
                             <div class="form-group">
                                 <label for="observations">Observación</label>
@@ -36,5 +36,44 @@
             </div>
         </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('donationForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío predeterminado del formulario
 
-
+            // Enviar formulario con fetch o axios
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form)
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Si la respuesta es exitosa, mostrar alerta de éxito
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Éxito!',
+                        text: 'El dato se ha guardado correctamente.',
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                    // Opcional: redirigir a otra página después de cierto tiempo
+                    setTimeout(() => {
+                        window.location.href = '{{ route("donaRegalo") }}';
+                    }, 2000);
+                } else {
+                    // Si la respuesta no es exitosa, mostrar alerta de error
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Hubo un problema al guardar el dato.',
+                        showConfirmButton: true
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+</script>

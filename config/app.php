@@ -181,8 +181,15 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
+    //'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
-    ])->toArray(),
+    //])->toArray(),
+
+    'aliases' => [
+        // Otras fachadas...
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Auth' => Illuminate\Support\Facades\Auth::class,
+
+    ],
 
 ];
