@@ -13,18 +13,13 @@
 </head>
 <body>
 @include('components.headerPage')
-<div class="container">
-    <br>
-    @include('components.formDonar')
-    <br>
-</div>
-@if (isset($message) && $message !== '')
-    <div class="alert alert-{{ $alertType }}" role="alert">
-        {{ $message }}
+    <div class="container">
+        @include('components.updatePasswordUser')
+        @include('components.estadoMisRegalos')
+        @include('components.bonos')
     </div>
-@endif
 @include('components.footerPage')
 <script src="{{ asset('js/bootstrap.js') }}"></script>
-<script src="{{ asset('vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
 </body>
 </html>
+

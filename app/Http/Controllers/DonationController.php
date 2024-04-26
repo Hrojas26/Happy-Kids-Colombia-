@@ -21,16 +21,22 @@ class DonationController extends Controller
             'observations' => 'nullable|string',
         ]);
 
+        $userId = Auth::id();
+
         $donation = new Donation([
             'address' => $request->input('address'),
             'dateCollection' => $request->input('dateCollection'),
             'timeCollection' => $request->input('timeCollection'),
             'numberToys' => $request->input('numberToys'),
             'observations' => $request->input('observations'),
+            'user_id' => $userId,
         ]);
 
-        $donation->save();
-
-        return redirect()->route('donaRegalo');
+       if($donation->save()){
+            $message = 'Donación creada';
+       } else{
+            $message = 'Error al moneto de crear la donación, comunicarce con el administrador';
+       }
+        return view('page.donaRegalo', ['message' => $message]);
     }
 }

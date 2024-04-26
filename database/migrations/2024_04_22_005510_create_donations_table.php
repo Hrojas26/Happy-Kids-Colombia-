@@ -18,6 +18,8 @@ return new class extends Migration
             $table->time('timeCollection');
             $table->integer('numberToys');
             $table->string('observations')->nullable();
+            $table->unsignedBigInteger('user_id'); // Cambiado a unsignedBigInteger para seguir las convenciones de Laravel
+            $table->foreign('user_id')->references('id')->on('users'); // Asumiendo que la tabla de usuarios se llama 'users'
             $table->timestamps();
         });
     }

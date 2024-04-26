@@ -11,5 +11,5 @@ class Donation extends Model
 
     protected $table = 'donations'; // Nombre de la tabla en la base de datos
 
-    protected $fillable = ['address', 'dateCollection', 'timeCollection', 'numberToys', 'observations'];
+    protected $fillable = ['address', 'dateCollection', 'timeCollection', 'numberToys', 'observations','user_id'];
 }

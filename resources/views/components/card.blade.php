@@ -1,4 +1,3 @@
-@foreach($gifts as $gift)
 <div class="card" style="width: 18rem;">
   <h5 class="card-title">{{ $gift->name }}</h5>
   <div class="card-body">
@@ -9,4 +8,3 @@
     <a href="#" class="btn btn-primary">Reclama</a>
   </div>
 </div>
-@endforeach

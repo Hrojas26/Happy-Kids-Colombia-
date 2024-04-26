@@ -139,7 +139,7 @@ a.nav-link {
     height: auto;
   }
 #PopUpHome{
-    display: none;
+    display: none !important;
 }
 .fade:not(.show) {
     opacity: 0 !important;
