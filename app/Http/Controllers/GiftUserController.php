@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GiftUser;
 use Illuminate\Http\Request;
+use App\Models\GiftUser;
+use App\Models\Gifts;
+use Illuminate\Support\Facades\Auth;
+
 
 class GiftUserController extends Controller
 {
@@ -18,10 +21,43 @@ class GiftUserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
+    public function create(Request $request)
+{
+    $userId = Auth::id();
+    $giftId = $request->input('id');
+
+    // Verificar si ya existe una entrada para el usuario y el regalo
+    $existingEntry = GiftUser::where('user_id', $userId)
+                              ->where('gift_id', $giftId)
+                              ->exists();
+
+    if ($existingEntry) {
+        return redirect()->route('gifts.index')->with('error', 'Ya has reclamado este bono anteriormente.');
     }
+
+    $request->validate([
+        'id' => 'required|exists:gifts,id',
+    ]);
+
+    $giftUser = new GiftUser([
+        'gift_id' => $giftId,
+        'user_id' => $userId,
+        'state' => 1, // Asignar el estado adecuado
+    ]);
+
+    if ($giftUser->save()) {
+        // Actualizar el estado del regalo a 2
+        $gift = Gifts::find($giftId);
+        if ($gift) {
+            $gift->state = 2;
+            $gift->save();
+        }
+
+        return redirect()->route('gifts.index')->with('success', 'El bono se reclamó exitosamente.');
+    } else {
+        return redirect()->route('gifts.index')->with('error', 'Error al momento de reclamar');
+    }
+}
 
     /**
      * Store a newly created resource in storage.

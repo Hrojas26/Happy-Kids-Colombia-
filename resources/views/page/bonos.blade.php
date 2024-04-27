@@ -21,6 +21,11 @@
 @foreach ($gifts as $gift)
 @include('components.card')
 @endforeach
+@if (session()->has('success') || session()->has('error'))
+    <div id="notification" class="alert alert-{{ session()->has('success') ? 'success' : 'danger' }}">
+        {{ session()->has('success') ? session('success') : session('error') }}
+    </div>
+@endif
 @include('components.footerPage')
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 </body>

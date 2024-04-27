@@ -1,6 +1,6 @@
 <h3>Bonos reclamados</h3>
 @if (isset($gifts) && $gifts !== '')
-    <table class="table">
+    <table class="table" id="bonos">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -18,9 +18,9 @@
                     <td>
                         @if ($gift->state == 1)
                             Pendiente por canjear
-                        @elseif ($gift->pivot->state == 2)
+                        @elseif ($gift->state == 2)
                             Canjeada
-                        @elseif ($gift->pivot->state == 3)
+                        @elseif ($gift->state == 3)
                             Expirada
                         @else
                             Estado desconocido

@@ -42,7 +42,11 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->state === 1) {
-            return redirect()->route('home');
+            if($user->rol ==='persona'){
+                return redirect()->route('home');
+            }else if($user->rol ==='empresa'){
+                return redirect()->route('gifts.all');
+            }
         } else {
             Auth::logout(); // Invalida la sesión
             return redirect()->route('login')->with('error', 'Tu cuenta está desactivada.');

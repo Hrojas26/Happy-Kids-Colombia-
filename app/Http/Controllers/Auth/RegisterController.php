@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -68,7 +69,20 @@ class RegisterController extends Controller
 
         if ($data['tipo'] == 'persona') {
             $dat = 1;
-        }
+        }else{
+            $asunto = 'Activar usuario';
+            $mensaje = 'la empresa ' . $data['name'] . ' debe ser activada';
+            $emailUsuario = env('MAIL_TO_ADDRESS'); // Obtiene la dirección de correo electrónico del archivo .env
+
+            $resultadoEnvio = Mail::raw($mensaje, function($message) use ($emailUsuario, $asunto) {
+                $message->to($emailUsuario)->subject($asunto);
+            });
+            if ($resultadoEnvio) {
+                echo "El correo electrónico se envió correctamente.";
+            } else {
+                echo "Hubo un problema al enviar el correo electrónico.";
+            }
+          }
 
         return User::create([
             'name' => $data['name'],
@@ -77,5 +91,6 @@ class RegisterController extends Controller
             'state' => $dat,
             'rol' => $data['tipo'],
         ]);
+
     }
 }

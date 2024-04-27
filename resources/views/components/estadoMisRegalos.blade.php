@@ -1,7 +1,7 @@
 
     <div>
         <h2>Estado de Mis Donaciones</h2>
-        <table class="table">
+        <table class="table" id="statusOfMyGifts">
     <thead>
         <tr>
             <th>ID</th>
