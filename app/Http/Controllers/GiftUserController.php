@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\GiftUser;
 use App\Models\Gifts;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Mail;
 
 class GiftUserController extends Controller
 {
@@ -52,7 +52,13 @@ class GiftUserController extends Controller
             $gift->state = 2;
             $gift->save();
         }
+        $asunto = 'Codigo del bono';
+        $mensaje = 'Has reclamado un bono con el siguiente código de canje:'.$gift->codigobono;
+        $emailUsuario = Auth::user()->email;
 
+        $resultadoEnvio = Mail::raw($mensaje, function($message) use ($emailUsuario, $asunto) {
+            $message->to($emailUsuario)->subject($asunto);
+        });
         return redirect()->route('gifts.index')->with('success', 'El bono se reclamó exitosamente.');
     } else {
         return redirect()->route('gifts.index')->with('error', 'Error al momento de reclamar');

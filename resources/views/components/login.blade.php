@@ -62,4 +62,9 @@
                 </div>
             </div>
         </div>
+            @if (session()->has('success') || session()->has('error'))
+            <div id="notification" class="alert alert-{{ session()->has('success') ? 'success' : 'danger' }}">
+                {{ session()->has('success') ? session('success') : session('error') }}
+            </div>
+        @endif
     </div>

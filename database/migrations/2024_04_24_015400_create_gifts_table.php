@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('urlimage');
             $table->string('company');
+            $table->string('codigobono');
             $table->integer('state');
             $table->date('expirationDate');
             $table->timestamps();

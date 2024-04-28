@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Gifts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 
 class GiftsController extends Controller
 {
@@ -33,16 +34,22 @@ class GiftsController extends Controller
              $request->validate([
                 'name' => 'required|string|max:255',
                 'description' => 'required|string',
-                'urlimage' => 'required|string',
+                'codigoBono' => 'required|string',
+                'urlimage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de la imagen
                 'expirationDate' => 'required|date',
             ]);
+
+            $imagenNombre = time().'.'.$request->urlimage->extension(); // Nombre único para la imagen
+            $request->urlimage->move(public_path('images'), $imagenNombre);
+            $urlImagen = URL::to('/').'/images/'.$imagenNombre;
 
             // Crear un nuevo regalo
             $gift = new Gifts();
             $gift->name = $request->input('name');
             $gift->description = $request->input('description');
-            $gift->urlimage = $request->input('urlimage');
+            $gift->urlimage = $urlImagen;
             $gift->company =auth()->user()->id;
+            $gift->codigobono = $request->input('codigoBono');
             $gift->state = 1;
             $gift->expirationDate = $request->input('expirationDate');
             $gift->save();

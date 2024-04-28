@@ -77,11 +77,6 @@ class RegisterController extends Controller
             $resultadoEnvio = Mail::raw($mensaje, function($message) use ($emailUsuario, $asunto) {
                 $message->to($emailUsuario)->subject($asunto);
             });
-            if ($resultadoEnvio) {
-                echo "El correo electrónico se envió correctamente.";
-            } else {
-                echo "Hubo un problema al enviar el correo electrónico.";
-            }
           }
 
         return User::create([
@@ -93,4 +88,7 @@ class RegisterController extends Controller
         ]);
 
     }
+
+
+
 }

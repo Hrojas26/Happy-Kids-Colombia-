@@ -6,6 +6,10 @@ use App\Http\Controllers\GiftsController;
 use App\Http\Controllers\InformationUserController;
 use App\Http\Controllers\Auth\UpdatePasswordController;
 use App\Http\Controllers\GiftUserController;
+use App\Http\Controllers\CretaeUserController;
+use App\Http\Controllers\UserController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +45,10 @@ Route::get('/dashboard', function () {
 Route::post('/donaregalos', [DonationController::class, 'store'])->name('donaciones.store');
 Route::get('/gifts', [GiftsController::class, 'index'])->name('gifts.index');
 Route::post('/crear-bono', [GiftsController::class, 'create'])->name('crear.bono');
+Route::post('/crear-user', [CretaeUserController::class, 'createUsuario'])->name('crear.user');
+
 Route::get('/gifts-all', [GiftsController::class, 'store'])->name('gifts.all');
+Route::get('/user-all', [UserController::class, 'all'])->name('user.all');
 
 Route::get('/informacion-data', [InformationUserController::class, 'index'])->name('information.index');
 

@@ -13,16 +13,16 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-
-
-@if(auth()->check())
-    @if(auth()->user()->rol ==='empresa')
-        <script>window.location.href = "{{ route('gifts.all') }}";</script>
+    @if(auth()->check())
+        @if(auth()->user()->rol ==='empresa')
+            <script>window.location.href = "{{ route('gifts.all') }}";</script>
+        @elseif(auth()->user()->rol ==='admin' )
+            <script>window.location.href = "{{ route('user.all') }}";</script>
+        @else
+            @include('components.inicioGeneral')
+        @endif
     @else
         @include('components.inicioGeneral')
     @endif
-@else
-    @include('components.inicioGeneral')
-@endif
 </body>
 </html>
