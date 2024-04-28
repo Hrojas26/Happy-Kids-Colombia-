@@ -157,8 +157,9 @@ a.nav-link {
     max-width: 100%;
     height: auto;
   }
+  //debe estar en block automaticamente
 #PopUpHome{
-    display: block !important ;
+    display: none !important ;
 }
 
 .fade:not(.show) {
