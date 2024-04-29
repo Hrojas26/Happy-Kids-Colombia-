@@ -1,4 +1,4 @@
-<div class="modal fade" id="{{ $popUpId }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="{{ $popUpId }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -9,7 +9,6 @@
         <div class="modal-body">
             <video autoplay loop muted style="width: 100%">
                 <source src="{{ $videoUrl }}" type="video/mp4">
-                Your browser does not support the video tag.
             </video>
         </div>
       </div>
@@ -22,4 +21,4 @@ $(document).ready(function(){
     $('.modal').attr('style', 'display: none !important'); // Oculta el modal al hacer clic en el botón de cerrar
   });
 })
-  </script>
+  </script> --}}

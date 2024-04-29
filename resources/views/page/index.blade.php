@@ -19,6 +19,7 @@
     <!-- Scripts -->
 </head>
 <body>
+
     @if(auth()->check())
         @if(auth()->user()->rol ==='empresa')
             <script>window.location.href = "{{ route('gifts.all') }}";</script>
@@ -30,13 +31,15 @@
     @else
         @include('components.inicioGeneral')
     @endif
+
 @include('components.headerPage')
 {{-- popup --}}
-@include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','videoUrl' => asset('img/robot.mp4'),'modalDescripcion' => '¡ Hola bienvenido a Happy Kids Colombia ! explora nuestra web y juega con nuestros objetos 3D, oprime y arrastra.'])
+@include('components.Popup', [
+    'popUpId' => 'PopUpHome',
+    'title' => '¡Interactua con nuestros objetos 3D!',
+    'videoUrl' => asset('img/robot.mp4'),
+    'modalDescripcion' => '¡ Hola bienvenido a Happy Kids Colombia ! explora nuestra web y juega con nuestros objetos 3D, oprime y arrastra.'])
 {{-- popup end --}}
-
-
-
 
 <div class="rox">
 
