@@ -1,4 +1,4 @@
-{{-- <div class="modal fade" id="{{ $popUpId }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="{{ $popUpId }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -21,4 +21,4 @@ $(document).ready(function(){
     $('.modal').attr('style', 'display: none !important'); // Oculta el modal al hacer clic en el botón de cerrar
   });
 })
-  </script> --}}
+  </script>
