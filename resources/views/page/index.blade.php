@@ -7,6 +7,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('particles.js-master/demo/css/style.css') }}">
 
 
     <!-- Scripts -->
@@ -16,9 +17,11 @@
         crossorigin="anonymous">
     </script>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
     <!-- Scripts -->
 </head>
 <body class="home">
+
 
     @if(auth()->check())
         @if(auth()->user()->rol ==='empresa')
@@ -32,6 +35,9 @@
         @include('components.inicioGeneral')
     @endif
 
+    <script src="{{ asset('particles.js-master/particles.js') }}"></script>
+    <script src="{{ asset('particles.js-master/demo/js/app.js') }}"></script>
+    <script src="{{ asset('particles.js-master/demo/js/lib/stats.js') }}"></script>
 
 </body>
 </html>

@@ -51,10 +51,11 @@
                         <img class="circuloImg"src="{{ asset('img/mario.jpg') }}" alt="Tu Foto" class="rounded-full w-64 h-64 mx-auto mb-4">
                       </div>
                       <div class="text-justify text-center">
-                        <h3 class="text-2xl font-bold mb-4">Acerca de Mí</h3>
+                        <h3 class="text-2xl font-bold mb-4">Heisemberth Mario</h3>
+                        <p>Ingeniero de sistemas y desarollador web</p>
                         <p class="text-lg mb-4">Soy un apasionado de la innovación y la creatividad. Desde una edad temprana, he estado obsesionado con encontrar soluciones creativas a los problemas cotidianos.</p>
                         <p class="text-lg mb-4">Con [Nombre de tu empresa], mi objetivo es llevar esa pasión al mundo, creando productos que no solo sean funcionales, sino también inspiradores y emocionantes.</p>
-                        <p class="text-lg">Estoy emocionado de compartir mi viaje contigo y espero que encuentres inspiración en lo que hacemos.</p>
+                        <p class="text-lg">Estoy emocionado de compartir mi viaje contigo y espero que encuentres inspiración en lo que hacemos. 🚀</p>
                       </div>
                     </div>
                   </div>

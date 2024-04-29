@@ -1,8 +1,9 @@
 <div class="container-fluid">
     <div class="row rowSection">
         <div class="col-md-6 colBorder">
-            <div class="imgBox backBox">
 
+            <div class="imgBox backBox ">
+                <div id="particles-js"></div>
             </div>
 
            <img class="imgBox2 frontBox floating-image" src="{{ asset('img/man.png') }}" alt="">
@@ -19,3 +20,4 @@
         </div>
     </div>
 </div>
+
