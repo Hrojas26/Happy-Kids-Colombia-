@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row cinta">
     <div id="message-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">

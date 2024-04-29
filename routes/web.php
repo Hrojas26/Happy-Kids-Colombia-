@@ -22,6 +22,10 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
+return view('page.index');
+})->name('home');
+
+Route::get('/', function () {
     return view('page.index');
 })->name('home');
 
@@ -32,6 +36,10 @@ Route::get('/bonos', function () {
 Route::get('/informacion', function () {
     return view('page.informacionUser');
 })->name('information');
+
+Route::get('/nosotros', function () {
+    return view('page.nosotros');
+})->name('nosotros');
 
 Route::get('/donaciones', function () {
     return view('page.donaRegalo');
@@ -52,6 +60,8 @@ Route::get('/user-all', [UserController::class, 'all'])->name('user.all');
 
 
 Route::get('/informacion-data', [InformationUserController::class, 'index'])->name('information.index');
+
+
 
 
 Auth::routes();

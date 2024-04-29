@@ -18,7 +18,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <!-- Scripts -->
 </head>
-<body>
+<body class="home">
 
     @if(auth()->check())
         @if(auth()->user()->rol ==='empresa')

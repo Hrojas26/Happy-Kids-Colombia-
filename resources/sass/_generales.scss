@@ -156,8 +156,9 @@ a.nav-link {
     height: auto;
   }
   //debe estar en block automaticamente
-#PopUpHome{
-    display: block !important;
+
+#PopUpHome {
+    display: none !important;
 }
 
 .fade:not(.show) {
@@ -177,4 +178,77 @@ a.nav-link {
 }
 video {
     border-radius: 5px;
+}
+body#nosotros{
+    background: linear-gradient(135deg, #63488F, #BC95E4, #A992FE);
+    height: 100%;
+}
+.boy{
+    width: 420px;
+    position: relative;
+    left: -109px;
+    top: -59px;
+    z-index: 1;
+}
+
+.colNosotrosText{
+    margin-top: 3%;
+}
+.circuloImg {
+    border-radius: 6%;
+    width: 43%;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+.circuloImg:hover {
+    transform: scale(1.1); /* Escala al hacer hover */
+}
+
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mb-8 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#nosotrosfilter {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.5); /* Color del "vidrio" con transparencia */
+    backdrop-filter: blur(10px); /* Aplicar un desenfoque al fondo */
+    padding: 20px; /* Ajusta el relleno según sea necesario */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde con transparencia */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Pequeño destello para simular el vidrio */
+    left: -19%;
+  }
+  @keyframes floating2 {
+    0% {
+        transform: translateY(0) rotate(-70deg); /* Rotación inicial y posición */
+    }
+    50% {
+        transform: translateY(-20px) rotate(-70deg); /* Sube 20px y mantiene la rotación */
+    }
+    100% {
+        transform: translateY(0) rotate(-70deg); /* Regresa a la posición inicial y mantiene la rotación */
+    }
+}
+
+.boyright {
+    width: 553px;
+    position: absolute;
+    z-index: 0;
+    top: -12%;
+    left: 42%;
+    transform: translate(-30%, -10%) rotate(296deg);
+    animation: floating2 1.8s ease-in-out infinite;
+}
+.dropdown-menu.dropdown-menu-end.show{
+    z-index: 999999;
 }
