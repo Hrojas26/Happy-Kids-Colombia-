@@ -31,7 +31,7 @@
                         <li class="nav-item">
                             <a href="#bonos-all" class="nav-link" onclick="showGiftsAdmin(this)">
                                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#bonos-all"></use></svg>
-                                Bonos
+                                Donaciones
                             </a>
                         </li>
                     @endif
