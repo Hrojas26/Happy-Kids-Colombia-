@@ -37,7 +37,7 @@
                 <div class="card-body">
                   <h5 class="card-title">BIENVENIDO A HAPPY KIDS COLOMBIA</h5>
                   <p class="card-text">"La magia de la infancia está en tus manos."</p>
-                  <a href="#" class="btn btn-dark">¡ DONA UN JUGUETE !</a>
+                  {{-- <a href="#" id="btnosotros" class="btn btn-dark">¡ DONA UN JUGUETE !</a> --}}
                 </div>
               </div>
         </div>
