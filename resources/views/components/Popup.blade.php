@@ -2,12 +2,24 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">{{ $title }}</h5>
+          <h4 class="modal-title" id="exampleModalLabel">{{ $title }}</h4>
           <span class="modal-close" data-bs-dismiss="modal">&times;</span>
         </div>
+        <p class="modal-descripcion">{{ $modalDescripcion }}</p>
         <div class="modal-body">
-          <img  src="{{ $imagePopUp }} " style="width: 100%" alt="Imagen">
+            <video autoplay loop muted style="width: 100%">
+                <source src="{{ $videoUrl }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+$(document).ready(function(){
+  $('.modal-close, .modal').click(function(){
+    $('.modal').attr('style', 'display: none !important'); // Oculta el modal al hacer clic en el botón de cerrar
+  });
+})
+  </script>

@@ -128,21 +128,40 @@ a.nav-link {
     color:black;
   }
   .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+        position: absolute;
+    top: 8px;
+    right: 8px;
     color: rgb(0, 0, 0);
     cursor: pointer;
+    font-size: 20px;
+    background: black;
+    color: white;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+    &:hover{
+        background-color: #B482D4;
+        transform: scale(1.1);
+    }
   }
+
+
   #myModal img {
     max-width: 100%;
     height: auto;
   }
+  //debe estar en block automaticamente
 #PopUpHome{
     display: none !important;
 }
+
 .fade:not(.show) {
-    opacity: 0 !important;
+    opacity: 1 !important;
 }
 
 .modal {
@@ -150,4 +169,12 @@ a.nav-link {
     align-items: center !important;
     justify-content: center !important;
     overflow: auto !important;
+    background-color:rgb(0 0 0 / 61%);
+}
+.modal-descripcion {
+    padding: 0px 22px;
+    text-align: center;
+}
+video {
+    border-radius: 5px;
 }
