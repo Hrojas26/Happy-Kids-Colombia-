@@ -50,11 +50,13 @@ Route::post('/crear-user', [CretaeUserController::class, 'createUsuario'])->name
 Route::get('/gifts-all', [GiftsController::class, 'store'])->name('gifts.all');
 Route::get('/user-all', [UserController::class, 'all'])->name('user.all');
 
+
 Route::get('/informacion-data', [InformationUserController::class, 'index'])->name('information.index');
 
 
 Auth::routes();
 Route::post('/update-password', [UpdatePasswordController::class, 'update'])->name('update.password');
 Route::post('/reclamar-bono', [GiftUserController::class, 'create'])->name('reclama.bono');
+Route::post('/edit-all', [UserController::class, 'saveUserEdit'])->name('edit.user');
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
