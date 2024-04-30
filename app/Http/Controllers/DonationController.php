@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Donation;
+use App\Models\StateDonation;
+use App\Models\UserToys;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,11 +35,51 @@ class DonationController extends Controller
             'user_id' => $userId,
         ]);
 
-       if($donation->save()){
-            $message = 'Donación creada';
-       } else{
-            $message = 'Error al moneto de crear la donación, comunicarce con el administrador';
-       }
+        $message = 'Error al momento de crear la donación, comunicarse con el administrador';
+
+        if ($donation->save()) {
+
+            $stateDonation = new StateDonation([
+                'user_id' => $userId,
+                'donation_id' => $donation->id,
+                'status' => 'en_recogida',
+            ]);
+            $stateDonation->save();
+
+            // Buscar si existe una entrada para este usuario en la tabla user_toys
+            $userToy = UserToys::where('user_id', $userId)->first();
+
+            if ($userToy) {
+                // Si existe, sumar el número de juguetes recibidos al número existente
+                $userToy->received_toys += $donation->numberToys;
+            } else {
+                // Si no existe, crear una nueva entrada con el número de juguetes recibidos
+                $userToy = new UserToys([
+                    'received_toys' => $donation->numberToys,
+                    'user_id' => $userId,
+                ]);
+            }
+
+            // Guardar la entrada actualizada o nueva en la base de datos
+            if ($userToy->save()) {
+                $message = 'Donación creada y juguetes registrados correctamente';
+            }
+        }
+
         return view('page.donaRegalo', ['message' => $message]);
     }
+
+    public function updateStatus(Request $request, $donationId)
+    {
+
+        $stateDonation = StateDonation::where('donation_id', $donationId)->first();
+        if ($stateDonation) {
+            $stateDonation->status = $request->status;
+            $stateDonation->save();
+            return redirect()->back()->with('success', 'Estado de la donación actualizado correctamente.');
+        } else {
+            return redirect()->back()->with('error', 'No se pudo encontrar el estado de la donación.');
+        }
+    }
+
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Donation;
+use App\Models\StateDonation;
 
 class UserController extends Controller
 {
@@ -14,7 +16,9 @@ class UserController extends Controller
     public function all()
     {
         $users = User::all(); // Obtener todos los usuarios desde la base de datos
-        return view('page.empresa.dashboard', ['users' => $users]);
+        $donationStatuses = StateDonation::with('donation')->get();
+
+        return view('page.empresa.dashboard', ['users' => $users,'donationes' => $donationStatuses]);
 
     }
 
@@ -38,7 +42,7 @@ class UserController extends Controller
         // Actualizar los campos del usuario
         $user->name = $name;
         $user->email = $email;
-        $user->state = ($state === 'Activado') ? 1 : 0;
+        $user->state =  $state;
         $user->rol = $rol;
 
         // Guardar los cambios en la base de datos

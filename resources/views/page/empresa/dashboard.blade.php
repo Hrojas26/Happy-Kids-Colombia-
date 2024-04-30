@@ -44,7 +44,7 @@
                 <!-- Todos los Bonos -->
                 <div class="col-md-9" id="bonosAdmin" style="display: none;">
                     <div class="container">
-                        <h1>Todos bonos</h1>
+                    @include('components.empresa.bonosFull')
                     </div>
                 </div>
                 @endif
@@ -137,6 +137,7 @@
         $(document).ready(function () {
             $('#gifts-table').DataTable();
             $('#user-table').DataTable();
+            $('#bonosFull').DataTable();
 
         });
     </script>
