@@ -68,5 +68,6 @@ Auth::routes();
 Route::post('/update-password', [UpdatePasswordController::class, 'update'])->name('update.password');
 Route::post('/reclamar-bono', [GiftUserController::class, 'create'])->name('reclama.bono');
 Route::post('/edit-all', [UserController::class, 'saveUserEdit'])->name('edit.user');
+Route::put('/donations/{donation}', [DonationController::class, 'updateStatus'])->name('updateStatus');
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

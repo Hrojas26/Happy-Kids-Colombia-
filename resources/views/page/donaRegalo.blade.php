@@ -19,7 +19,7 @@
     <br>
 </div>
 @if (isset($message) && $message !== '')
-    <div class="alert alert-{{ $alertType }}" role="alert">
+    <div class="alert alert-success" role="alert">
         {{ $message }}
     </div>
 @endif

@@ -10,19 +10,19 @@
     </thead>
     <tbody>
         @foreach ($users as $user)
-        <tr>
+        <tr data-user-id="{{ $user->id }}">
         <td><span class="editable" data-field="name" data-id="{{ $user->id }}">{{ $user->name }}</span></td>
         <td><span class="editable" data-field="email" data-id="{{ $user->id }}">{{ $user->email }}</span></td>
         <td>
                 <span class="editable" data-field="state" data-id="{{ $user->id }}">{{ $user->state == 1 ? 'Activado' : 'Desactivado' }}</span>
-                <select class="form-control edit-state" style="display: none;">
-                    <option value="1">Activado</option>
+                <select id="state-{{ $user->id }}" class="form-control edit-state" style="display: none;">
+                    <option value="1" >Activado</option>
                     <option value="0">Desactivado</option>
                 </select>
             </td>
             <td>
                 <span class="editable" data-field="rol" data-id="{{ $user->id }}">{{ $user->rol }}</span>
-                <select class="form-control edit-rol" style="display: none;">
+                <select id="rol-{{ $user->id }}" class="form-control edit-rol" style="display: none;">
                     <option value="persona" {{ $user->rol == 'persona' ? 'selected' : '' }}>Persona</option>
                     <option value="empresa" {{ $user->rol == 'empresa' ? 'selected' : '' }}>Empresa</option>
                     <option value="admin" {{ $user->rol == 'admin' ? 'selected' : '' }}>Admin</option>
@@ -36,7 +36,12 @@
         @endforeach
     </tbody>
 </table>
-
+<label for="miSelect">Selecciona una opción:</label>
+    <select id="miSelect">
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+        <option value="opcion3">Opción 3</option>
+    </select>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -95,6 +100,13 @@ $(document).ready(function() {
             data[field] = value;
         });
 
+        var userId = data['id'];
+        var selectIdState = '#state-'+userId; // Reemplaza "tuSelectId" con el ID real de tu select
+        var selectIdRol = '#rol-'+userId; // Reemplaza "tuSelectId" con el ID real de tu select
+        var selectedValueState = $(selectIdState).val(); // Obtener el valor seleccionado del select
+        var selectedValueRol = $(selectIdRol).val(); // Obtener el valor seleccionado del select
+        data.state=selectedValueState;
+        data.rol=selectedValueRol;
         console.log("Datos enviados:", data);
 
         $.ajax({
@@ -102,10 +114,12 @@ $(document).ready(function() {
             method: 'POST',
             data: data,
             success: function(response) {
+                console.log(response);
                 if (response.success) {
                     var users = response.users; // Ahora la respuesta contiene todos los usuarios actualizados
                     users.forEach(function(user) {
-                        var row = $('tr[data-id="' + user.id + '"]'); // Buscar la fila correspondiente al usuario
+                        var row = $('tr[data-user-id="' + user.id + '"]'); // Buscar la fila correspondiente al usuario
+                        console.log(row);
                         row.find('.editable').each(function() {
                             var field = $(this).data('field');
                             if (field === 'state') {
@@ -114,9 +128,11 @@ $(document).ready(function() {
                                 $(this).text(user[field]);
                             }
                         });
-                        row.find('.edit-user').show();
-                        row.find('.save-user').hide();
                     });
+                    row.find('input, select').hide();
+                    row.find('span.editable').show();
+                    row.find('.edit-user').show();
+                    row.find('.save-user').hide();
                 }
             },
             error: function(xhr, status, error) {
