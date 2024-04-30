@@ -258,3 +258,44 @@ body#nosotros{
 footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-4.border-top {
     margin-bottom: 0px !important;
 }
+
+.container.bonosfila {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+// aqui
+
+.card-img {
+    width: 250px;
+    height: 250px;
+    overflow: hidden; /* Para recortar cualquier parte de la imagen que exceda el tamaño del contenedor */
+}
+
+.card-img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+}
+
+/* Estilo base para las tarjetas */
+.bonostyle {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de aumento de tamaño y sombra al hacer hover */
+.bonostyle:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 2px 42px rgba(153, 102, 255, 2.5);
+}
+.TittleCard{
+    background: #212529;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:100 !important;
+}

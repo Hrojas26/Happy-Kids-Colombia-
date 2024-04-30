@@ -18,9 +18,14 @@
         {{ $message }}
     </div>
 @endif
-@foreach ($gifts as $gift)
-@include('components.card')
-@endforeach
+
+<div class="container bonosfila ">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+        @foreach ($gifts as $gift)
+        @include('components.card')
+        @endforeach
+    </div>
+</div>
 @if (session()->has('success') || session()->has('error'))
     <div id="notification" class="alert alert-{{ session()->has('success') ? 'success' : 'danger' }}">
         {{ session()->has('success') ? session('success') : session('error') }}

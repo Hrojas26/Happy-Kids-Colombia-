@@ -52,7 +52,7 @@ a.btn.btn-dark {
     transition: width 0.3s; /* Transición suave de la animación */
 }
 .btn.btn-dark:hover {
-    width: 90%; /* Ancho aumentado al pasar el mouse por encima */
+    width: 100%; /* Ancho aumentado al pasar el mouse por encima */
     background-color: #C191CF;
     border: solid 0.5px rgba(255, 255, 255, 0.178);
 }
