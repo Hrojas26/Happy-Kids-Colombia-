@@ -15,7 +15,7 @@
                 <div class="card-body">
                   <h5 class="card-title">BIENVENIDO A HAPPY KIDS COLOMBIA</h5>
                   <p class="card-text">"La magia de la infancia está en tus manos."</p>
-                  <a href="#" class="btn btn-dark">¡ DONA UN JUGUETE !</a>
+                  <a href="{{ route('donaRegalo') }}" class="btn btn-dark">¡ DONA UN JUGUETE !</a>
                 </div>
               </div>
         </div>
@@ -48,10 +48,10 @@
             </button>
         </div> --}}
         {{-- Carrousel para usar end --}}
-
     </div>
+    @include('components.slick')
     <div class="row">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-2 g-4 mt-0">
             <div class="col">
               <div class="card grow-on-hover">
                 <img src="{{ asset('img/card1.jpg') }}" class="card-img-top" alt="...">

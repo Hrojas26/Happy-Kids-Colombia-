@@ -1,19 +1,18 @@
 
-    <div>
+<div>
         <h2 class="mb-3">Estado de Mis Donaciones</h2>
-        <table class="table" id="statusOfMyGifts">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Dirección</th>
-            <th>Fecha de recolección</th>
-            <th>Hora de recolección</th>
-            <th>Número de juguetes</th>
-            <th>Observaciones</th>
-            <th>Estado</th>
-
-        </tr>
-    </thead>
+    <table class="table" id="statusOfMyGifts">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Dirección</th>
+                <th>Fecha de recolección</th>
+                <th>Hora de recolección</th>
+                <th>Número de juguetes</th>
+                <th>Observaciones</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
     <tbody>
         @foreach ($donations as $donation)
             <tr>
@@ -33,10 +32,10 @@
             </tr>
         @endforeach
     </tbody>
-</table>
-<div class="total-toys">
-    <h3>🧸 Total de Juguetes Donados: {{ $totalToys }}</h3>
-    <h3>🎁 Cantidad de Juguetes entregados por Happy Kids Colombia: {{ $deliveredDonationsCount }}</h3>
+    </table>
+        <div class="total-toys">
+            <h3>🧸 Total de Juguetes Donados: {{ $totalToys }}</h3>
+            <h3>🎁 Cantidad de Juguetes entregados por Happy Kids Colombia: {{ $deliveredDonationsCount }}</h3>
+        </div>
 </div>
-    </div>
 
