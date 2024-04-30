@@ -1,4 +1,4 @@
-<h3>Bonos reclamados</h3>
+<h3 class="mb-3">Bonos reclamados</h3>
 @if (isset($gifts) && $gifts !== '')
     <table class="table" id="bonos">
         <thead>

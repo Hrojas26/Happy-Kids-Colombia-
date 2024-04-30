@@ -1,8 +1,7 @@
 
 
-<h2>Actualiza tu información</h2>
+<h2>Hola {{ Auth::user()->name }} aquí puedes actualizar tu contraseña</h2>
         <div>
-            <h3>Información del Usuario</h3>
             <p>Nombre: {{ Auth::user()->name }}</p>
             <p>Correo Electrónico: {{ Auth::user()->email }}</p>
             <button class="btn btn-primary" id="update-password-btn">Actualizar contraseña</button>

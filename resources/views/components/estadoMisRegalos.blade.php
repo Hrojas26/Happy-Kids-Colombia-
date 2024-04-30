@@ -1,6 +1,6 @@
 
     <div>
-        <h2>Estado de Mis Donaciones</h2>
+        <h2 class="mb-3">Estado de Mis Donaciones</h2>
         <table class="table" id="statusOfMyGifts">
     <thead>
         <tr>
@@ -35,8 +35,8 @@
     </tbody>
 </table>
 <div class="total-toys">
-    <h3>Total de Juguetes Donados: {{ $totalToys }}</h3>
-    <h3>Cantidad de Regalos Entregados: {{ $deliveredDonationsCount }}</h3>
+    <h3>🧸 Total de Juguetes Donados: {{ $totalToys }}</h3>
+    <h3>🎁 Cantidad de Juguetes entregados por Happy Kids Colombia: {{ $deliveredDonationsCount }}</h3>
 </div>
     </div>
 

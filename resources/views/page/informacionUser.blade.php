@@ -14,9 +14,15 @@
 <body>
 @include('components.headerPage')
     <div class="container">
-        @include('components.updatePasswordUser')
-        @include('components.estadoMisRegalos')
-        @include('components.bonos')
+        <div class="row info-user">
+            @include('components.estadoMisRegalos')
+        </div>
+        <div class="row info-user">
+            @include('components.bonos')
+        </div>
+        <div class="row info-user">
+            @include('components.updatePasswordUser')
+        </div>
     </div>
 @include('components.footerPage')
 <script src="{{ asset('js/bootstrap.js') }}"></script>
