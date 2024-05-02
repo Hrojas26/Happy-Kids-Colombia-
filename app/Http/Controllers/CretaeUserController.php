@@ -25,7 +25,8 @@ class CretaeUserController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|confirmed',
+            'password_confirmation' => 'required|string|min:8|',
             'tipo' => 'required|string', // Asegúrate de ajustar las reglas de validación según tu necesidad
         ]);
 
@@ -34,8 +35,8 @@ class CretaeUserController extends Controller
         if ($data['tipo'] == 'persona') {
             $dat = 1;
         }else{
-            $asunto = 'Activar usuario';
-            $mensaje = 'la empresa ' . $data['name'] . ' debe ser activada';
+            $asunto = 'Activar empresa en HKC';
+            $mensaje = 'Hola ADMIN la empresa ' . $data['name'] . ' se ha registrado y debe ser confirmada, porfavor ve a tu dashboard y activala, de lo contrario ignora este mensaje. ';
             $emailUsuario = env('MAIL_TO_ADDRESS'); // Obtiene la dirección de correo electrónico del archivo .env
 
             $resultadoEnvio = Mail::raw($mensaje, function($message) use ($emailUsuario, $asunto) {
@@ -55,6 +56,7 @@ class CretaeUserController extends Controller
         // Puedes hacer algo más con el usuario creado aquí, si es necesario
 
         // Devuelve una respuesta, vista, o realiza una redirección según tu lógica de aplicación
-        return view('page.index');
+        return redirect()->route('login', ['email' => $data['email']])->with('success', '¡Te has registrado exitosamente! Por favor, inicia sesión.');
+
     }
 }

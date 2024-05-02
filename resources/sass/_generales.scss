@@ -42,17 +42,6 @@ a.nav-link {
     color: whitesmoke;
 }
 
-.alert-info,.alert-warning,.alert-success {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    background: black;
-    color: whitesmoke;
-    border: none;
-    margin: 0px;
-    padding: 3px;
-    border-radius: 0px !important;
-}
 .row.row-cols-1.row-cols-md-2.g-4 {
     margin-bottom: 25px;
 }
@@ -339,7 +328,7 @@ footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-4.bor
     width: 200px !important;
     display: flex;
     justify-content: center;
-    align-items: c;
+    align-items: center;
 }
 .img-marcas{
     width: 70%;
@@ -351,4 +340,15 @@ footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-4.bor
     display: flex;
     justify-content: end;
     align-items: center;
+}
+#cinta{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background: black;
+    color: whitesmoke;
+    border: none;
+    margin: 0px;
+    padding: 3px;
+    border-radius: 0px !important;
 }

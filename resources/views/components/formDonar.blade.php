@@ -7,25 +7,25 @@
                         <form method="POST" action="{{ route('donaciones.store') }}">
                             @csrf
 
-                            <div class="form-group">
-                                <label for="address">Dirección</label>
+                            <div class="form-group mt-2">
+                                <label for="address ">Dirección en donde recogeremos los juguetes</label>
                                 <input id="address" type="text" class="form-control" name="address" required autofocus>
                             </div>
 
-                            <div class="form-group">
-                                <label for="dateCollection">Fecha de recolección</label>
+                            <div class="form-group mt-2">
+                                <label for="dateCollection ">Fecha</label>
                                 <input id="dateCollection" type="date" class="form-control" name="dateCollection" required>
                             </div>
-                            <div class="form-group">
-                                <label for="timeCollection">Hora de recolección (entre 9:00 y 18:00)</label>
+                            <div class="form-group mt-2">
+                                <label for="timeCollection ">Hora de recolección (entre 9:00 am y 6:00 pm)</label>
                                 <input id="timeCollection" type="time" class="form-control" name="timeCollection" required min="09:00" max="18:00">
                             </div>
-                            <div class="form-group">
-                                <label for="numberToys">Cantidad de juguetes a donar</label>
+                            <div class="form-group mt-2">
+                                <label for="numberToys ">¿Cuantos juguetes vas a donar?</label>
                                 <input id="numberToys" type="number" class="form-control" name="numberToys" required>
                             </div>
-                            <div class="form-group">
-                                <label for="observations">Observación</label>
+                            <div class="form-group mt-2">
+                                <label for="observations ">¿Que vas a donar?</label>
                                 <input id="observations" type="text" class="form-control" name="observations" required>
                             </div>
                             <br>
