@@ -57,6 +57,7 @@ class CretaeUserController extends Controller
 
         // Devuelve una respuesta, vista, o realiza una redirección según tu lógica de aplicación
         return redirect()->route('login', ['email' => $data['email']])->with('success', '¡Te has registrado exitosamente! Por favor, inicia sesión.');
+        
 
     }
 }

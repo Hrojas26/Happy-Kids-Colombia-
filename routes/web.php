@@ -41,6 +41,10 @@ Route::get('/nosotros', function () {
     return view('page.nosotros');
 })->name('nosotros');
 
+Route::get('/gracias', function () {
+    return view('page.gracias');
+})->name('gracias');
+
 Route::get('/donaciones', function () {
     return view('page.donaRegalo');
 })->name('donaRegalo')->middleware('auth');

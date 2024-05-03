@@ -65,8 +65,8 @@ class DonationController extends Controller
                 $message = 'Donación creada y juguetes registrados correctamente';
             }
         }
-
-        return view('page.donaRegalo', ['message' => $message]);
+    // Redireccionar a la página de agradecimiento con un mensaje de éxito
+        return view('page.gracias', ['message' => $message]);
     }
 
     public function updateStatus(Request $request, $donationId)

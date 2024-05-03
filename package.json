@@ -14,7 +14,8 @@
         "vite": "^5.2.10"
     },
     "dependencies": {
-        "three": "^0.163.0",
-        "sweetalert2": "^11.10.8"
+        "canvas-confetti": "^1.9.3",
+        "sweetalert2": "^11.10.8",
+        "three": "^0.163.0"
     }
 }
