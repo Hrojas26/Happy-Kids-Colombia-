@@ -58,8 +58,8 @@
 
 
 <script>
-    document.getElementById('myAudio').volume = 0.5;
-    
+    document.getElementById('myAudio').volume = 0.1;
+
     // Crea una instancia de JSConfetti
     const confetti = new JSConfetti();
 

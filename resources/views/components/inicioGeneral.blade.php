@@ -49,7 +49,7 @@
         </div> --}}
         {{-- Carrousel para usar end --}}
     </div>
-    @include('components.slick')
+
     <div class="row">
         <div class="row row-cols-1 row-cols-md-2 g-4 mt-0">
             <div class="col">
@@ -93,4 +93,5 @@
 
 </div>
 @include('components.section')
+@include('components.slick')
 @include('components.footerPage')

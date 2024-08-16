@@ -42,7 +42,7 @@ $deliveredDonationsCount = $donationStatuses->where('status', 'entregado')
 
         if ($userGifts->isEmpty()) {
             // Si el usuario no tiene bonos reclamados, muestra un mensaje
-            $message = 'No tiene bonos reclamados.';
+            $message = 'No tiene bonos reclamados aún.';
         } else {
             // Si el usuario tiene bonos reclamados, pasa los resultados a la vista
             $gifts = $userGifts->pluck('gift'); // Obtener solo los datos de las gifts

@@ -43,7 +43,7 @@ class LoginController extends Controller
     {
         if ($user->state === 0) {
             Auth::logout();
-            return redirect()->route('login')->with('error', 'Se encuentra en proceso de activación');
+            return redirect()->route('login')->with('error', 'no puede iniciar sesion, su empresa primero debe ser activada por el administrador');
         }
         else if ($user->state === 1) {
             if($user->rol ==='persona'){
@@ -60,3 +60,5 @@ class LoginController extends Controller
         }
     }
 }
+
+
