@@ -22,18 +22,38 @@
                     </a>
                 </li>
             @else
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a href="#user-all" class="nav-link"  onclick="showUsers(this)">
                         <svg class="bi me-2" width="16" height="16"><use xlink:href="#user-all"></use></svg>
                         Usuarios
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#bonos-all" class="nav-link" onclick="showGiftsAdmin(this)">
-                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#bonos-all"></use></svg>
+                    <a href="#donaciones-all" class="nav-link active" onclick="showEstadoDonaciones(this)">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#donaciones-all"></use></svg>
                         Donaciones
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="#create-bonos-two" class="nav-link" aria-current="page" onclick="showFormAdmin(this)">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#create-bonos-two"></use></svg>
+                        Crea Bonos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#create-user-admin-page" class="nav-link" aria-current="page" onclick="CreateUserAdmin(this)">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#create-user-admin-page"></use></svg>
+                        Crear usuario nuevo
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#ver-bonos" class="nav-link" aria-current="page" onclick="ShowAllBonos(this)">
+                        <svg class="bi me-2" width="16" height="16"><use xlink:href="#ver-bonos"></use></svg>
+                        Ver todos los bonos creados
+                    </a>
+                </li>
+
+
             @endif
         </ul>
         <hr>

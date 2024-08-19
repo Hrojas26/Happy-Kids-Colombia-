@@ -63,6 +63,8 @@ Route::get('/gifts-all', [GiftsController::class, 'store'])->name('gifts.all');
 Route::get('/user-all', [UserController::class, 'all'])->name('user.all');
 
 
+
+
 Route::get('/informacion-data', [InformationUserController::class, 'index'])->name('information.index');
 
 
@@ -75,3 +77,4 @@ Route::post('/edit-all', [UserController::class, 'saveUserEdit'])->name('edit.us
 Route::put('/donations/{donation}', [DonationController::class, 'updateStatus'])->name('updateStatus');
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

@@ -24,7 +24,7 @@ class UserController extends Controller
 
     public function saveUserEdit(Request $request)
     {
-        // Obtener datos del formulario
+        // Obtener datos del usuario
         $id = $request->input('id');
         $name = $request->input('name');
         $email = $request->input('email');

@@ -35,18 +35,38 @@
                         </div>
                     </div>
                 @else
-                <!-- Todos los usuarios -->
+                <!-- Todos los usuarios CUALQUIER MENU QUE SE AÑADA DEBE QUEDAR ENCIMA DEL ULTIMO -->
                 <div class="col-md-9" id="userAll" style="display: none;">
                     <div class="container">
                         @include('components.empresa.users')
                     </div>
                 </div>
-                <!-- Todos los Bonos -->
+                <!-- Formularios para crear bonos desde admin -->
+                  <div class="col-md-9" id="form-container-empresa" style="display: none;">
+                    <div class="container">
+                        @include('components.empresa.crearBonos')
+                    </div>
+                </div>
+                <!-- Crear usuario desde el admin -->
+                  <div class="col-md-9" id="create-user-admin" style="display: none;">
+                    <div class="container">
+                        @include('auth.passwords.registerAdmin')
+                    </div>
+                </div>
+                <!-- Ver todos los bonos creados -->
+                <div class="col-md-9" id="show-bonos-admin" style="display: block;"> <!-- Cambié el display a block para que sea visible -->
+                    <div class="container">
+                        <h1>HOLA</h1>
+                    </div>
+                </div>
+
+                <!-- Todas las donaciones -->
                 <div class="col-md-9" id="bonosAdmin" style="display: none;">
                     <div class="container">
                     @include('components.empresa.bonosFull')
                     </div>
                 </div>
+
                 @endif
             @endif
             <!-- infomraicon de usuario -->
@@ -105,12 +125,45 @@
             document.getElementById('userInfoContainer').style.display = 'none';
             document.getElementById('userAll').style.display = 'block';
             document.getElementById('bonosAdmin').style.display = 'none';
+            document.getElementById('form-container-empresa').style.display = 'none';
+            document.getElementById('create-user-admin').style.display = 'none';
+            document.getElementById('show-bonos-admin').style.display = 'none';
             markActive(element);
         }
-        function showGiftsAdmin(element) {
+        function showEstadoDonaciones(element) {
             document.getElementById('userInfoContainer').style.display = 'none';
             document.getElementById('userAll').style.display = 'none';
             document.getElementById('bonosAdmin').style.display = 'block';
+            document.getElementById('form-container-empresa').style.display = 'none';
+            document.getElementById('create-user-admin').style.display = 'none';
+            document.getElementById('show-bonos-admin').style.display = 'none';
+            markActive(element);
+        }
+        function showFormAdmin(element) {
+            document.getElementById('userInfoContainer').style.display = 'none';
+            document.getElementById('userAll').style.display = 'none';
+            document.getElementById('bonosAdmin').style.display = 'none';
+            document.getElementById('form-container-empresa').style.display = 'block';
+            document.getElementById('create-user-admin').style.display = 'none';
+            document.getElementById('show-bonos-admin').style.display = 'none';
+            markActive(element);
+        }
+        function CreateUserAdmin(element) {
+            document.getElementById('userInfoContainer').style.display = 'none';
+            document.getElementById('userAll').style.display = 'none';
+            document.getElementById('bonosAdmin').style.display = 'none';
+            document.getElementById('form-container-empresa').style.display = 'none';
+            document.getElementById('create-user-admin').style.display = 'block';
+            document.getElementById('show-bonos-admin').style.display = 'none';
+            markActive(element);
+        }
+        function ShowAllBonos(element) {
+            document.getElementById('userInfoContainer').style.display = 'none';
+            document.getElementById('userAll').style.display = 'none';
+            document.getElementById('bonosAdmin').style.display = 'none';
+            document.getElementById('form-container-empresa').style.display = 'none';
+            document.getElementById('create-user-admin').style.display = 'none';
+            document.getElementById('show-bonos-admin').style.display = 'block';
             markActive(element);
         }
 
