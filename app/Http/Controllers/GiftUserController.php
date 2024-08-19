@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\GiftUser;
 use App\Models\Gifts;
 use App\Models\UserToys;
+use App\Models\StateDonation; // Importa el modelo StateDonation
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -40,46 +41,54 @@ class GiftUserController extends Controller
             'id' => 'required|exists:gifts,id',
         ]);
 
+        // Verificar el estado de las donaciones del usuario
+        $donacionesEnProceso = StateDonation::where('user_id', $userId)
+                                            ->where('status', 'en_proceso_administrativo')
+                                            ->count();
+        $totalDonaciones = StateDonation::where('user_id', $userId)->count();
 
-        $userToy = UserToys::where('user_id', $userId)->first();
-        if ($userToy) {
-            // Calcular la diferencia entre received_toys y redeemed_toys
-            $diferencia = $userToy->received_toys - $userToy->redeemed_toys;
-            if ($diferencia >= 10) {
-                // Actualizar redeemed_toys agregando 10
-                $userToy->redeemed_toys += 10;
-                $userToy->save();
+        if ($donacionesEnProceso === $totalDonaciones) {
+            $userToy = UserToys::where('user_id', $userId)->first();
+            if ($userToy) {
+                // Calcular la diferencia entre received_toys y redeemed_toys
+                $diferencia = $userToy->received_toys - $userToy->redeemed_toys;
+                if ($diferencia >= 10) {
+                    // Actualizar redeemed_toys agregando 10
+                    $userToy->redeemed_toys += 10;
+                    $userToy->save();
 
-                $giftUser = new GiftUser([
-                    'gift_id' => $giftId,
-                    'user_id' => $userId,
-                    'state' => 1, // Asignar el estado adecuado
-                ]);
+                    $giftUser = new GiftUser([
+                        'gift_id' => $giftId,
+                        'user_id' => $userId,
+                        'state' => 1, // Asignar el estado adecuado
+                    ]);
 
-                if ($giftUser->save()) {
-                    // Actualizar el estado del regalo a 2
-                    $gift = Gifts::find($giftId);
-                    if ($gift) {
-                        $gift->state = 2;
-                        $gift->save();
+                    if ($giftUser->save()) {
+                        // Actualizar el estado del regalo a 2
+                        $gift = Gifts::find($giftId);
+                        if ($gift) {
+                            $gift->state = 2;
+                            $gift->save();
+                        }
+
+                        $asunto = 'Código del bono';
+                        $mensaje = 'Has reclamado un bono con el siguiente código de canje: ' . $gift->codigobono;
+                        $emailUsuario = Auth::user()->email;
+
+                        Mail::raw($mensaje, function($message) use ($emailUsuario, $asunto) {
+                            $message->to($emailUsuario)->subject($asunto);
+                        });
+
+                        return redirect()->route('gifts.index')->with('success', 'El bono se reclamó exitosamente.');
                     }
-                    $asunto = 'Codigo del bono';
-                    $mensaje = 'Has reclamado un bono con el siguiente código de canje:'.$gift->codigobono;
-                    $emailUsuario = Auth::user()->email;
-
-                    $resultadoEnvio = Mail::raw($mensaje, function($message) use ($emailUsuario, $asunto) {
-                    $message->to($emailUsuario)->subject($asunto);
-                    });
-                return redirect()->route('gifts.index')->with('success', 'El bono se reclamó exitosamente.');
-                }
-            }
-            else {
-                    // Mostrar un mensaje indicando que no hay suficientes juguetes para reclamar el bono
+                } else {
                     return redirect()->route('gifts.index')->with('error', 'No tienes suficientes juguetes para reclamar el bono.');
                 }
-        }
-        else {
-            return redirect()->route('gifts.index')->with('error', 'Error al momento de reclamar');
+            } else {
+                return redirect()->route('gifts.index')->with('error', 'Error al momento de reclamar');
+            }
+        } else {
+            return redirect()->route('gifts.index')->with('error', 'Tus donaciones aún no han sido validadas por el administrador.');
         }
     }
 
