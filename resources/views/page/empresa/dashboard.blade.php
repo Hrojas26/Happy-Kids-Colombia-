@@ -56,7 +56,7 @@
                 <!-- Ver todos los bonos creados -->
                 <div class="col-md-9" id="show-bonos-admin" style="display: block;"> <!-- Cambié el display a block para que sea visible -->
                     <div class="container">
-                        <h1>HOLA</h1>
+                       <h1>Hola</h1>
                     </div>
                 </div>
 
@@ -191,7 +191,6 @@
             $('#gifts-table').DataTable();
             $('#user-table').DataTable();
             $('#bonosFull').DataTable();
-
         });
     </script>
 </body>

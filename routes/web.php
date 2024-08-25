@@ -21,6 +21,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
+
+
+
 Route::get('/', function () {
 return view('page.index');
 })->name('home');
