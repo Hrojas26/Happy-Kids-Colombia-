@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,14 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
+
 <body>
-@include('components.headerPage')
+    @include('components.headerPage')
     <div class="container">
         <div class="row info-user">
+            @include('components.estadoGraficoMisRegalos')
             @include('components.estadoMisRegalos')
         </div>
         <div class="row info-user">
@@ -24,22 +28,23 @@
             @include('components.updatePasswordUser')
         </div>
     </div>
-@include('components.footerPage')
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-<!-- CSS de DataTables -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    @include('components.footerPage')
 
-<!-- jQuery (necesario para DataTables) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- CSS de DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 
-<!-- DataTables -->
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#statusOfMyGifts').DataTable();
-        $('#bonos').DataTable();
-    });
-</script>
+    <!-- jQuery (necesario para DataTables) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#statusOfMyGifts').DataTable();
+            $('#bonos').DataTable();
+            
+        });
+    </script>
 </body>
-</html>
 
+</html>
