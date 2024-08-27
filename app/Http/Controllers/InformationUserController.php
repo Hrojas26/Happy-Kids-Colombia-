@@ -19,17 +19,18 @@ class InformationUserController extends Controller
         $userId = Auth::id();
 
         // Obtener todas las donaciones del usuario actual
-        $donations = Donation::where('user_id', $userId)->get();
+        $donations = Donation::where('user_id', $userId)->with('StateDonation')
+            ->get();
 
         // Obtener el estado de cada donación
         $donationStatuses = StateDonation::whereIn('donation_id', $donations->pluck('id'))->get();
 
-// Sumar la cantidad de juguetes entregados
-$deliveredDonationsCount = $donationStatuses->where('status', 'entregado')
-                                      ->map(function ($donationStatus) {
-                                          return $donationStatus->donation->numberToys;
-                                      })
-                                      ->sum();
+        // Sumar la cantidad de juguetes entregados
+        $deliveredDonationsCount = $donationStatuses->where('status', 'entregado')
+            ->map(function ($donationStatus) {
+                return $donationStatus->donation->numberToys;
+            })
+            ->sum();
 
         // Sumar el total de juguetes donados
         $totalToys = $donations->sum('numberToys');
@@ -37,8 +38,8 @@ $deliveredDonationsCount = $donationStatuses->where('status', 'entregado')
 
         // Obtener los bonos reclamados por el usuario
         $userGifts = GiftUser::where('user_id', $userId)
-                             ->with('gift') // Cargar la relación con el modelo Gift
-                             ->get();
+            ->with('gift') // Cargar la relación con el modelo Gift
+            ->get();
 
         if ($userGifts->isEmpty()) {
             // Si el usuario no tiene bonos reclamados, muestra un mensaje
@@ -50,10 +51,10 @@ $deliveredDonationsCount = $donationStatuses->where('status', 'entregado')
         }
 
         return view('page.informacionUser', compact('donations', 'totalToys', 'donationStatuses', 'deliveredDonationsCount', 'gifts', 'message'));
-  }
+    }
 
-public function gifts()
-{
-    return $this->belongsToMany(Gift::class)->withPivot('state');
-}
+    public function gifts()
+    {
+        return $this->belongsToMany(Gift::class)->withPivot('state');
+    }
 }

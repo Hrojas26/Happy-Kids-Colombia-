@@ -11,6 +11,9 @@ class Donation extends Model
 
     protected $table = 'donations'; // Nombre de la tabla en la base de datos
 
-    protected $fillable = ['address', 'dateCollection', 'timeCollection', 'numberToys', 'observations','user_id'];
-
+    protected $fillable = ['address', 'dateCollection', 'timeCollection', 'numberToys', 'observations', 'user_id'];
+    public function StateDonation()
+    {
+        return $this->belongsTo(StateDonation::class, 'id');
+    }
 }
