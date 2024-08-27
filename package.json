@@ -5,17 +5,17 @@
         "dev": "vite",
         "build": "vite build"
     },
-    "devDepenencies": {
-        "@popdperjs/core": "^2.11.6",
+    "devDependencies": {
         "axios": "^1.6.4",
         "bootstrap": "^5.2.3",
-        "laravel-vite-plugin": "^1.0.0",
         "sass": "^1.56.1",
         "vite": "^5.2.10"
     },
     "dependencies": {
+        "@popperjs/core": "^2.11.8",
         "canvas-confetti": "^1.9.3",
-        "sweetalert2": "^11.10.8",
+        "laravel-vite-plugin": "^1.0.5",
+        "popper.js": "^1.16.1",
         "three": "^0.163.0"
     }
 }
