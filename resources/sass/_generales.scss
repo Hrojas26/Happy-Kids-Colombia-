@@ -250,12 +250,10 @@ footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-4.bor
 
 .container.bonosfila {
     margin-top: 5%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    flex-wrap: nowrap;
 }
-
+.row.row-cols-1.row-cols-md-2.row-cols-lg-3 {
+    margin-left: 49px;
+}
 // aqui
 
 .card-img {
