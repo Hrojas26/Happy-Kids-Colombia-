@@ -1,7 +1,7 @@
 <div class="w-100 ">
 
     <?php
-    $state = 'en_recogida';
+    $state = '';
     foreach ($donationStatuses as $donationStatus) {
         if ($donationStatus->donation_id === $donations[$donations->count() - 1]->id) {
             $state = $donationStatus->status;
