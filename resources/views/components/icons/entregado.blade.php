@@ -8,5 +8,5 @@
         </svg>
 
     </div>
-    <h6 class="text-center mt-2">Entregado</h6>
+    <h6 class="text-center mt-2">Sueños cumplidos</h6>
 </div>

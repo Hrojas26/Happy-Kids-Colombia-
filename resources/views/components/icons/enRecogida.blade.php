@@ -2,7 +2,7 @@
     <div id="en_recogida" class="rounded-2 m-auto p-2" style="width: 70px">
         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 491.1 491.1" xml:space="preserve" transform="matrix(-1, 0, 0, 1, 0, 0)">
+            viewBox="0 0 491.1 491.1" fill="#0F1F3C" xml:space="preserve" transform="matrix(-1, 0, 0, 1, 0, 0)">
 
             <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
@@ -11,7 +11,7 @@
 
             <g id="SVGRepo_iconCarrier">
                 <g transform="translate(0 -540.36)">
-                    <g> 
+                    <g>
                         <g>
                             <path
                                 d="M401.5,863.31c-12,0-23.4,4.7-32,13.2c-8.6,8.6-13.4,19.8-13.4,31.8s4.7,23.2,13.4,31.8c8.7,8.5,20,13.2,32,13.2 c24.6,0,44.6-20.2,44.6-45S426.1,863.31,401.5,863.31z M401.5,933.31c-13.8,0-25.4-11.4-25.4-25s11.6-25,25.4-25 c13.6,0,24.6,11.2,24.6,25S415.1,933.31,401.5,933.31z" />
@@ -37,5 +37,5 @@
         </svg>
 
     </div>
-    <h6 class="text-center  mt-2">recogida</h6>
+    <h6 class="text-center  mt-2">En camino a la mágia</h6>
 </div>

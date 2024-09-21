@@ -384,3 +384,41 @@ footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-4.bor
     align-items: center;
     justify-content: center;
 }
+.bg-donacion{
+    background: #B886D3;
+    border-radius: 4px !important;
+}
+.text-underline{
+    text-decoration: underline;
+}
+table.table.table-hover.cursor-pointer {
+    cursor: pointer;
+}
+table.table.table-hover {
+    cursor: pointer;
+}
+h3.m-3.impacto {
+    border: 1px solid #B886D3;
+    padding: 15px;
+    border-radius: 4px;
+    background: #be8ed0;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+button.btn-hkc {
+    background: #BE8ED0;
+    color: white;
+}
+button.btn-hkc:hover {
+    background: #BE8ED0;
+    color: white;
+}
+.btn-hkc {
+    background: #BE8ED0;
+    color: white;
+}
+.btn-hkc:hover {
+    background: #BE8ED0;
+    color: white;
+}

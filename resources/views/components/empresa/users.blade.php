@@ -29,7 +29,7 @@
                 </select>
             </td>
             <td>
-                <button class="btn btn-primary edit-user" data-id="{{ $user->id }}">Editar</button>
+                <button class="btn btn-hkc edit-user" data-id="{{ $user->id }}">Editar</button>
                 <button class="btn btn-success save-user" style="display: none;" data-id="{{ $user->id }}">Guardar</button>
             </td>
         </tr>

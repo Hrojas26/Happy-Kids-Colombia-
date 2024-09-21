@@ -31,5 +31,5 @@
         </svg>
 
     </div>
-    <h6 class="text-center  mt-2">en entrega</h6>
+    <h6 class="text-center  mt-2">Rumbo a una sonrisa</h6>
 </div>

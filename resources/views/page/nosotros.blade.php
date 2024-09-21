@@ -19,7 +19,7 @@
 <body id="nosotros">
 @include('components.headerPage')
 {{-- popup --}}
-@include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','videoUrl' => asset('img/robot.mp4'),'modalDescripcion' => '¡ Hola bienvenido a Happy Kids Colombia ! explora nuestra web y juega con nuestros objetos 3D, oprime y arrastra.'])
+{{-- @include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','videoUrl' => asset('img/robot.mp4'),'modalDescripcion' => '¡ Hola bienvenido a Happy Kids Colombia ! explora nuestra web y juega con nuestros objetos 3D, oprime y arrastra.']) --}}
 {{-- popup end --}}
 
 
@@ -39,22 +39,30 @@
                 <section id="nosotrosfilter" class="py-12">
                   <div class="container mx-auto px-4 center">
                     <div class="text-center mb-8">
-                      <h2 class="text-4xl font-bold mb-4">¡Conoce al Creador!</h2>
+                      <h2 class="text-4xl font-bold mb-4">¡Conoce a los Creadores!</h2>
                       @if(Auth::check())
-                      <p class="text-lg">¡Hola {{ Auth::user()->name }}, estoy encantado de conocerte. Soy Heisemberth, el creador detrás de HAPPY KIDS COLOMBIA</p>
+                      <p class="text-lg">¡Hola {{ Auth::user()->name }}, estamos encantados de conocerte. Somos Heisemberth Mario y Nicolas Yosa, los creadores detrás de HAPPY KIDS COLOMBIA</p>
                   @else
-                      <p class="text-lg">¡Hola, estoy encantado de conocerte. Soy Heisemberth, el creador detrás de HAPPY KIDS COLOMBIA</p>
+                      <p class="text-lg">¡Hola, estamos encantados de conocerte. Somos heisemberth Mario y Nicolas Yosa, los creadores detrás de HAPPY KIDS COLOMBIA</p>
                   @endif
                     </div>
                     <div class="max-w-lg mx-auto">
-                      <div class="mb-8">
-                        <img class="circuloImg"src="{{ asset('img/mario.jpg') }}" alt="Tu Foto" class="rounded-full w-64 h-64 mx-auto mb-4">
+                      <div class="d-flex justify-content-center">
+                        <img class="circuloImg m-2"src="{{ asset('img/mario.jpg') }}" alt="Tu Foto"class="rounded-full w-64 h-64 mx-auto m-1">
+                        <img class="circuloImg m-2"src="{{ asset('img/nico.jpg') }}" alt="Tu Foto" class="rounded-full w-64 h-64 mx-auto ">
                       </div>
-                      <div class="text-justify text-center">
-                        <h3 class="text-2xl font-bold mb-4">Acerca de Mí</h3>
-                        <p class="text-lg mb-4">Soy un apasionado de la innovación y la creatividad. Desde una edad temprana, he estado obsesionado con encontrar soluciones creativas a los problemas cotidianos.</p>
-                        <p class="text-lg mb-4">Con [Nombre de tu empresa], mi objetivo es llevar esa pasión al mundo, creando productos que no solo sean funcionales, sino también inspiradores y emocionantes.</p>
-                        <p class="text-lg">Estoy emocionado de compartir mi viaje contigo y espero que encuentres inspiración en lo que hacemos. 🚀</p>
+                      <div class="row">
+                        <div class="col-6">
+                            <h3 class="text-2xl font-bold mb-4 text-center">Mario</h3>
+                            <p class="text-lg mb-4 text-center">Soy apasionado por la innovación y creatividad, buscando soluciones originales a problemas diarios. Con Kappy Kids Colombia, nuestro objetivo es crear productos funcionales, inspiradores y emocionantes. Estamos emocionados de compartir este viaje contigo y esperamos que te inspire lo que hacemos.</p>
+                        </div>
+                        <div class="col-6">
+                            <h3 class="text-2xl font-bold mb-4 text-center">Nicolas</h3>
+                            <p class="text-lg mb-4 text-center">Me motiva transformar ideas en realidad. En Kappy Kids Colombia, diseñamos productos que resuelven necesidades y transmiten creatividad. Queremos que cada experiencia te haga sonreír y ver el mundo de forma diferente. ¡Esperamos inspirarte con lo que creamos! 🚀
+
+                            </p>
+                        </div>
+
                       </div>
                     </div>
                   </div>

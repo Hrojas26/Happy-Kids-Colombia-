@@ -22,6 +22,6 @@
             <label for="expirationDate" class="form-label">Expiration Date</label>
             <input type="date" class="form-control" id="expirationDate" name="expirationDate">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-hkc">Submit</button>
     </form>
 </div>

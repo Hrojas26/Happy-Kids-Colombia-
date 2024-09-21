@@ -1,5 +1,7 @@
 <div>
-    <h2 class="mb-3">Estado de Mis Donaciones</h2>
+    <h3 class="container-fluid text-center" >Mis donaciones</h3>
+    <p class="text-center mb-3" >Selecciona cualquiera de tus donaciones en la siguiente tabla para consultar el que estado se encuentra.</p>
+
 
     <table class="table table-hover">
         <thead>
@@ -10,7 +12,7 @@
                 <th>Hora de recolección</th>
                 <th>Número de juguetes</th>
                 <th>Observaciones</th>
-                <th>Estado</th>
+
             </tr>
         </thead>
         <tbody>
@@ -22,15 +24,15 @@
                     <td>{{ $donation->timeCollection }}</td>
                     <td>{{ $donation->numberToys }}</td>
                     <td>{{ $donation->observations }}</td>
-                    <td>{{ $donation->stateDonation->status }}</td>
+
 
                 </tr>
             @endforeach
         </tbody>
     </table>
-    <div class="total-toys">
-        <h3>🧸 Total de Juguetes Donados: {{ $totalToys }}</h3>
-        <h3>🎁 Cantidad de Juguetes entregados por Happy Kids Colombia: {{ $deliveredDonationsCount }}</h3>
+    <div class="container total-toys text-center col-12">
+        <h4 class="my-4">impacto de tus donaciones</h4>
+        <h3 class="m-3 impacto " >hasta el momento has donado <strong>{{ $totalToys }}</strong> juguetes y hemos entregado <strong>{{ $deliveredDonationsCount }}</strong></h3>
     </div>
 </div>
 <script>
@@ -40,32 +42,32 @@
         const enprocesoentrega = document.getElementById('en_proceso_entrega')
         const entregado = document.getElementById('entregado')
 
-        enrecogida.classList.remove("bg-danger")
-        enprocesoadministrativo.classList.remove("bg-danger")
-        enprocesoentrega.classList.remove("bg-danger")
-        entregado.classList.remove("bg-danger")
+        enrecogida.classList.remove("bg-donacion")
+        enprocesoadministrativo.classList.remove("bg-donacion")
+        enprocesoentrega.classList.remove("bg-donacion")
+        entregado.classList.remove("bg-donacion")
 
         const currentStatus = document.getElementById(state)
         if (state == 'en_recogida') {
-            enrecogida.classList.add("bg-danger")
-            enprocesoadministrativo.classList.remove("bg-danger")
-            enprocesoentrega.classList.remove("bg-danger")
-            entregado.classList.remove("bg-danger")
+            enrecogida.classList.add("bg-donacion")
+            enprocesoadministrativo.classList.remove("bg-donacion")
+            enprocesoentrega.classList.remove("bg-donacion")
+            entregado.classList.remove("bg-donacion")
         } else if (state == 'en_proceso_administrativo') {
-            enrecogida.classList.add("bg-danger")
-            enprocesoadministrativo.classList.add("bg-danger")
-            enprocesoentrega.classList.remove("bg-danger")
-            entregado.classList.remove("bg-danger")
+            enrecogida.classList.add("bg-donacion")
+            enprocesoadministrativo.classList.add("bg-donacion")
+            enprocesoentrega.classList.remove("bg-donacion")
+            entregado.classList.remove("bg-donacion")
         } else if (state == 'en_proceso_entrega') {
-            enrecogida.classList.add("bg-danger")
-            enprocesoadministrativo.classList.add("bg-danger")
-            enprocesoentrega.classList.add("bg-danger")
-            entregado.classList.remove("bg-danger")
+            enrecogida.classList.add("bg-donacion")
+            enprocesoadministrativo.classList.add("bg-donacion")
+            enprocesoentrega.classList.add("bg-donacion")
+            entregado.classList.remove("bg-donacion")
         } else if (state == 'entregado') {
-            enrecogida.classList.add("bg-danger")
-            enprocesoadministrativo.classList.add("bg-danger")
-            enprocesoentrega.classList.add("bg-danger")
-            entregado.classList.add("bg-danger")
+            enrecogida.classList.add("bg-donacion")
+            enprocesoadministrativo.classList.add("bg-donacion")
+            enprocesoentrega.classList.add("bg-donacion")
+            entregado.classList.add("bg-donacion")
         }
 
     }

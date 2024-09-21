@@ -20,11 +20,11 @@
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('information.index') }}">Información de Usuario</a>
+                        <a class="dropdown-item" href="{{ route('information.index') }}">Mis donaciones</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Salir') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
@@ -37,10 +37,10 @@
                         <a class="nav-link" href="{{ route('login') }}">Dona tu regalo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Iniciar</a>
+                        <a class="nav-link" href="{{ route('login') }}">Iniciar sesión</a>
                     </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrate') }}</a>
                         </li>
                 @endguest
             </ul>

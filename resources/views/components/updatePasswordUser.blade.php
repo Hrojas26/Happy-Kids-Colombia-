@@ -1,10 +1,10 @@
 
 
-<h2>Hola {{ Auth::user()->name }} aquí puedes actualizar tu contraseña</h2>
+<h3>Hola {{ Auth::user()->name }} aquí puedes actualizar tu contraseña</h3>
         <div>
             <p>Nombre: {{ Auth::user()->name }}</p>
             <p>Correo Electrónico: {{ Auth::user()->email }}</p>
-            <button class="btn btn-primary" id="update-password-btn">Actualizar contraseña</button>
+            <button class="btn btn-hkc" id="update-password-btn">Actualizar contraseña</button>
         </div>
         <div id="update-password-container" style="display: none;">
         <form method="POST" action="{{route('update.password')}}">
@@ -30,7 +30,7 @@
         <input type="password" id="new_password_confirmation" name="new_password_confirmation" class="form-control" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Actualizar contraseña</button>
+    <button type="submit" class="btn btn-hkc my-3">Actualizar contraseña</button>
 </form>
         </div>
         @if (session()->has('success'))

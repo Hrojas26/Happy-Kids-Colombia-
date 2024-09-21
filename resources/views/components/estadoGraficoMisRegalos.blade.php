@@ -1,4 +1,4 @@
-<div class="w-100 ">
+<div class="w-100 row info-user ">
 
     <?php
     $state = '';
@@ -8,9 +8,9 @@
         }
     }
     ?>
-
+ <h3 class="text center">Estado de Mis Donaciones</h3>
     <div class="d-flex  justify-content-center p-5">
-        <div class="d-flex  justify-content-center w-50">
+        <div class="d-flex  justify-content-center w-75">
             @include('components.icons.enRecogida')
             @include('components.icons.arrowLeft')
             @include('components.icons.enProcesoAdministrativo')

@@ -38,14 +38,14 @@
                         <!-- Authentication Links -->
                         @guest
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Inicio') }}</a>
+                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Informate') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('iniciar sesión') }}</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrate') }}</a>
                                 </li>
                         @else
                             <li class="nav-item dropdown">

@@ -1,7 +1,7 @@
 <div>
     <div id='en_proceso_administrativo' class="m-auto p-2" style="width: 70px">
         <?xml version="1.0" ?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-        <svg viewBox="0 0 50 50" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 50 50" data-name="Layer 1" fill="#000000" id="Layer_1" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <style>
                     .cls-1 {
@@ -47,5 +47,5 @@
         </svg>
 
     </div>
-    <h6 class="text-center  mt-2"> Administracion</h6>
+    <h6 class="text-center  mt-2">En nuestras manos</h6>
 </div>
