@@ -10,16 +10,16 @@ use Illuminate\Support\Facades\URL;
 class GiftsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la lista de bonos disponibles.
      */
     public function index()
     {
         $gifts = Gifts::where('state', 1)->get();
 
         if ($gifts->isEmpty()) {
-            $message = 'No hay regalos disponibles en este momento.';
+            $message = '';
         } else {
-            $message = null;
+            $message = null; 
         }
 
         return view('page.bonos', ['gifts' => $gifts, 'message' => $message]);
