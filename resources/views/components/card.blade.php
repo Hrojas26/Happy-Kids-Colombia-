@@ -7,9 +7,9 @@
             </div>
             <p class="card-text ">{{ $gift->description }}</p>
             <p class="card-text ">Fecha de expiración: {{ $gift->expirationDate }}</p>
-            <form action="{{ route('reclama.bono', ['id' => $gift->id]) }}" method="post">
+            <form class="w-100" action="{{ route('reclama.bono', ['id' => $gift->id]) }}" method="post">
                 @csrf
-                <button type="submit" class="btn btn-dark">Reclama</button>
+                <button type="submit" class="btn btn-hkc w-100">Reclamar</button>
             </form>
         </div>
     </div>
