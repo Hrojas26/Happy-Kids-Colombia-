@@ -6,20 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\GiftUser;
 use App\Models\Gifts;
 use App\Models\UserToys;
-use App\Models\StateDonation; // Importa el modelo StateDonation
+use App\Models\StateDonation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class GiftUserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -41,13 +33,13 @@ class GiftUserController extends Controller
             'id' => 'required|exists:gifts,id',
         ]);
 
-        // Verificar el estado de las donaciones del usuario
-        $donacionesEnProceso = StateDonation::where('user_id', $userId)
-                                            ->where('status', 'en_proceso_administrativo')
-                                            ->count();
-        $totalDonaciones = StateDonation::where('user_id', $userId)->count();
+        // Verificar si el usuario tiene donaciones en el estado 'en_recogida'
+        $donacionesPendientes = StateDonation::where('user_id', $userId)
+                                             ->where('status', 'en_recogida')
+                                             ->count();
 
-        if ($donacionesEnProceso === $totalDonaciones) {
+        // Si no hay donaciones pendientes en estado 'en_recogida', el usuario puede reclamar el bono
+        if ($donacionesPendientes === 0) {
             $userToy = UserToys::where('user_id', $userId)->first();
             if ($userToy) {
                 // Calcular la diferencia entre received_toys y redeemed_toys
@@ -71,6 +63,7 @@ class GiftUserController extends Controller
                             $gift->save();
                         }
 
+                        // Enviar el código del bono al correo del usuario
                         $asunto = 'Código del bono';
                         $mensaje = 'Has reclamado un bono con el siguiente código de canje: ' . $gift->codigobono;
                         $emailUsuario = Auth::user()->email;
@@ -85,7 +78,7 @@ class GiftUserController extends Controller
                     return redirect()->route('gifts.index')->with('error', 'No tienes suficientes juguetes para reclamar el bono.');
                 }
             } else {
-                return redirect()->route('gifts.index')->with('error', 'Error al momento de reclamar');
+                return redirect()->route('gifts.index')->with('error', 'Error al momento de reclamar.');
             }
         } else {
             return redirect()->route('gifts.index')->with('error', 'Tus donaciones aún no han sido validadas por el administrador.');
