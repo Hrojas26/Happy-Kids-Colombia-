@@ -1,6 +1,6 @@
 @include('components.headerPage')
 {{-- popup --}}
-@include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','videoUrl' => asset('img/robot.mp4'),'modalDescripcion' => '¡ Hola bienvenido a Happy Kids Colombia ! explora nuestra web y juega con nuestros objetos 3D, oprime y arrastra.'])
+@include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','videoUrl' => asset('img/robot.mp4'),'modalDescripcion' => 'explora nuestra web y juega con nuestros objetos 3D, oprime y arrastra.'])
 {{-- popup end --}}
 
 <div class="rox">
@@ -13,7 +13,7 @@
             <div class="card w-40 cardbanner">
                 <!-- Ejemplo de uso en una vista Blade -->
                 <div class="card-body">
-                  <h5 class="card-title">BIENVENIDO A HAPPY KIDS COLOMBIA</h5>
+                  <h5 class="card-title">BIENVENIDO A HKC</h5>
                   <p class="card-text">"La magia de la infancia está en tus manos."</p>
                   <a href="{{ route('donaRegalo') }}" class="btn btn-dark">¡ DONA UN JUGUETE !</a>
                 </div>
@@ -51,6 +51,14 @@
     </div>
 
     <div class="row">
+        <div class="container text-center mt-5">
+            <div class="alert alert-info" role="alert">
+             
+                <h5 class="alert-heading"><i class="bi bi-question-circle"></i> Sabías que en Happy Kids Colombia puedes seguir el trayecto de tus donaciones </h5>
+                <p class="mb-0" >Así es, tienes la posibilidad de ver cómo tus donaciones están impactando en la vida de los niños. ¡Mantente informado en todo momento! </p>
+
+            </div>
+        </div>
         <div class="row row-cols-1 row-cols-md-2 g-4 mt-0">
             <div class="col">
               <div class="card grow-on-hover">
