@@ -23,7 +23,7 @@
 <div class="container text-center mt-5">
     <div class="alert alert-info" role="alert">
         <p class="mb-0">
-            Recuerda que después de que recojamos tu donación, podrás reclamar tu bono a partir del día siguiente.
+            <i class="bi bi-exclamation-triangle"></i>  Recuerda que después de que recojamos tu donación, podrás reclamar tu bono a partir del siguiente día. <i class="bi bi-exclamation-triangle"></i>
         </p>
     </div>
 </div>
