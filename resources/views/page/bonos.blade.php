@@ -13,20 +13,20 @@
 </head>
 <body>
 @include('components.headerPage')
-
+ 
 @if ($message)
     <div class="alert alert-info" role="alert">
         {{ $message }}
     </div>
-@endif
+@endif 
 
-<div class="container text-center mt-5">
+ <div class="container text-center mt-5">
     <div class="alert alert-info" role="alert">
         <p class="mb-0">
             <i class="bi bi-exclamation-triangle"></i>  Recuerda que después de que recojamos tu donación, podrás reclamar tu bono a partir del siguiente día. <i class="bi bi-exclamation-triangle"></i>
         </p>
     </div>
-</div>
+</div> 
 
 <div class="container bonosfila">
     @if ($gifts->isEmpty())  <!-- Verifica si no hay bonos -->
@@ -37,7 +37,8 @@
             </div>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+  
         @else
             @foreach ($gifts as $gift)
                 @include('components.card')
