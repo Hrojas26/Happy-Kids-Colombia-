@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Donation;
+use App\Models\Gifts;
 use App\Models\StateDonation;
 
 class UserController extends Controller
@@ -16,10 +17,10 @@ class UserController extends Controller
     public function all()
     {
         $users = User::all(); // Obtener todos los usuarios desde la base de datos
+        $gifts = Gifts::where('state', 1)->get();
         $donationStatuses = StateDonation::with('donation')->get();
 
-        return view('page.empresa.dashboard', ['users' => $users,'donationes' => $donationStatuses]);
-
+        return view('page.empresa.dashboard', ['users' => $users, 'donationes' => $donationStatuses, 'gifts' => $gifts]);
     }
 
     public function saveUserEdit(Request $request)
@@ -55,7 +56,4 @@ class UserController extends Controller
             return response()->json(['success' => false, 'message' => 'Error al guardar los cambios'], 500);
         }
     }
-
-
-
 }
