@@ -10,5 +10,5 @@ class Gifts extends Model
     use HasFactory;
     protected $table = 'gifts'; // Nombre de la tabla en la base de datos
 
-    protected $fillable = ['name', 'description', 'urlimage','company','codigobono','state', 'expirationDate'];
+    protected $fillable = ['name', 'description', 'urlimage', 'company', 'codigobono', 'state', 'expirationDate', 'direccionEmpresa'];
 }

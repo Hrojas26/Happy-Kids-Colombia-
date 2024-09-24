@@ -29,17 +29,21 @@
             <div class="col-md-6 center mx-auto">
                 <section id="nosotrosfilter" class="py-12">
                     <div class="row text-center pb-4">
-                        <h2 class="text-4xl font-bold mb-4">¡ {{ Auth::user()->name }} ! </h2>
-                        <h5 class="text-lg">Gracias a ti, uno de los 4,240 niños que se encuentran en situación de pobreza podrán recibir al menos un juguete este año, gracias.</h5>
+                        <h2 class="text-4xl font-bold mb-4 text-underline"> {{ Auth::user()->name }}  </h2>
+                        <p class="fs-8">Gracias a ti, uno de los <strong> 4,240 </strong> niños que se encuentran en situación de pobreza podrán recibir al menos un juguete este año, gracias.</p>
                     </div>
 
                 <div class="row">
                     <div class="col">
                         <div class="container mx-auto ">
                             <div class="text-center ">
-                                <img class="img-fluid mx-auto d-block" src="{{ asset('img/ninogrito.png') }}" >
+                                <img class="img-fluid mx-auto d-block w-50" src="{{ asset('img/ninogrito.png') }}" >
                             </div>
                          </div>
+                         <p class="text-center mt-3" >¡Perfecto, si ya donaste 10 juguetes puedes ir a ver los bonos disponibles para reclamar!</p>
+                         <a href="{{ route('gifts.index') }}" class="btn btn-hkc w-100">
+                            {{ __('RECLAMA UN BONO') }}
+                        </a>
                     </div>
                 </div>
                 </section>

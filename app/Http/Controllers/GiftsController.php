@@ -37,6 +37,7 @@ class GiftsController extends Controller
                 'codigoBono' => 'required|string',
                 'urlimage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de la imagen
                 'expirationDate' => 'required|date',
+                'direccionEmpresa' => 'required|string',
             ]);
 
             $imagenNombre = time().'.'.$request->urlimage->extension(); // Nombre único para la imagen
@@ -52,6 +53,7 @@ class GiftsController extends Controller
             $gift->codigobono = $request->input('codigoBono');
             $gift->state = 1;
             $gift->expirationDate = $request->input('expirationDate');
+            $gift->direccionEmpresa = $request->input('direccionEmpresa'); // Asigna la dirección
             $gift->save();
             // Redireccionar a alguna página después de crear el regalo (por ejemplo, a la lista de regalos)
             return redirect()->route('gifts.all')->with('success', 'Gift created successfully.');

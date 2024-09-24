@@ -65,7 +65,10 @@ class GiftUserController extends Controller
 
                         // Enviar el código del bono al correo del usuario
                         $asunto = 'Código del bono';
-                        $mensaje = 'Has reclamado un bono con el siguiente código de canje: ' . $gift->codigobono;
+                        $mensaje = 'Has reclamado un bono con el siguiente código de canje: ' . $gift->codigobono . ' y puedes canjearlo en la tienda que se encuentra en la siguiente dirección:' . $gift->direccionEmpresa;
+
+
+                        
                         $emailUsuario = Auth::user()->email;
 
                         Mail::raw($mensaje, function($message) use ($emailUsuario, $asunto) {

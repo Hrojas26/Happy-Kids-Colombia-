@@ -29,7 +29,7 @@
                                 <input id="observations" type="text" class="form-control" name="observations" required>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-hkc">Enviar</button>
+                            <button type="submit" class="btn btn-hkc w-100">DONAR</button>
                         </form>
                     </div>
                 </div>

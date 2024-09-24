@@ -21,7 +21,7 @@
             <h3 class="container-fluid text-center" >¡ Aquí puedes ver tus donaciones y el estado en el que se encuentran !</h3>
             <div class="row info-user">
                 <div class="container-fluid text-center">
-                    <h5 class="mb-4 " >¿que significa cada estado?</h5>
+                    <h3 class="mb-4 " >¿Qué significa cada estado?</h3>
                     <p class=" btn-hkc" >Cada estado representa una etapa en el viaje de tu donacion. Desde el momento en que decides donar hasta que los niños reciben los juguetes.</p>
                 </div>
 

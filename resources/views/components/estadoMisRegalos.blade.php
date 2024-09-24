@@ -31,8 +31,8 @@
         </tbody>
     </table>
     <div class="container total-toys text-center col-12">
-        <h4 class="my-4">impacto de tus donaciones</h4>
-        <h3 class="m-3 impacto " >hasta el momento has donado <strong>{{ $totalToys }}</strong> juguetes y hemos entregado <strong>{{ $deliveredDonationsCount }}</strong></h3>
+        <h3 class="my-4">Impacto de tus donaciones</h3>
+        <h3 class="m-3 impacto " >Hasta el momento has donado <strong>{{ $totalToys }}</strong> juguetes y hemos entregado <strong>{{ $deliveredDonationsCount }}</strong></h3>
     </div>
 </div>
 <script>
