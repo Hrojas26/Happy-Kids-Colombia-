@@ -43,6 +43,7 @@
             @include('components.estadoGraficoMisRegalos')
             @include('components.estadoMisRegalos')
         </div>
+        
         <div class="row info-user">
             @include('components.bonos')
         </div>

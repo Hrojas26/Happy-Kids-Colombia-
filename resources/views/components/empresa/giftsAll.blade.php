@@ -1,4 +1,4 @@
- <h1>Gifts Table</h1>
+ <h1>Bonos creados</h1>
     <table id="gifts-table">
         <thead>
             <tr>
