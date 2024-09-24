@@ -38,7 +38,7 @@
 <div class="container bonosfila">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
         @if ($gifts->isEmpty())  <!-- Verifica si no hay bonos -->
-            <div class="container text-center mt-5">
+            <div class="container text-center mt-5 w-100">
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <img src="{{ asset('img/nobonos.png') }}" alt="Regalo" class="img-fluid">

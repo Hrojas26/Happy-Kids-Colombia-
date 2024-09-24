@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <h2 class="mb-4">Gift Form</h2>
+    <h2 class="mb-4">Crea tu bono de descuento</h2>
     <form action="{{ route('crear.bono') }}" method="POST"  enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -13,6 +13,10 @@
         <div class="mb-3">
             <label for="codigoBono" class="form-label">Codigo del Bono</label>
             <textarea class="form-control" id="codigoBono" name="codigoBono"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="direccionEmpresa" class="form-label">Dirección de la Empresa</label>
+            <input type="text" class="form-control" id="direccionEmpresa" name="direccionEmpresa" required>
         </div>
         <div class="mb-3">
             <label for="urlimage" class="form-label">Image URL</label>
