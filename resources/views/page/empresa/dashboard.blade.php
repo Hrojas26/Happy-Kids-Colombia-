@@ -18,10 +18,10 @@
     <div class="container-fluid mt-3">
         <div class="row">
             @include('components.empresa.Sidebar')
-            @if(auth()->check())
-                @if(auth()->user()->rol ==='empresa')
+            @if (auth()->check())
+                @if (auth()->user()->rol === 'empresa')
                     <!-- Todas las gifts -->
-                    @if(session()->has('gifts'))
+                    @if (session()->has('gifts'))
                         <div class="col-md-9" id="gifts-container" style="display: none;">
                             <div class="container">
                                 @include('components.empresa.giftsAll')
@@ -35,37 +35,39 @@
                         </div>
                     </div>
                 @else
-                <!-- Todos los usuarios CUALQUIER MENU QUE SE AÑADA DEBE QUEDAR ENCIMA DEL ULTIMO -->
-                <div class="col-md-9" id="userAll" style="display: none;">
-                    <div class="container">
-                        @include('components.empresa.users')
+                    <!-- Todos los usuarios CUALQUIER MENU QUE SE AÑADA DEBE QUEDAR ENCIMA DEL ULTIMO -->
+                    <div class="col-md-9" id="userAll" style="display: none;">
+                        <div class="container">
+                            @include('components.empresa.users')
+                        </div>
                     </div>
-                </div>
-                <!-- Formularios para crear bonos desde admin -->
-                  <div class="col-md-9" id="form-container-empresa" style="display: none;">
-                    <div class="container">
-                        @include('components.empresa.crearBonos')
+                    <!-- Formularios para crear bonos desde admin -->
+                    <div class="col-md-9" id="form-container-empresa" style="display: none;">
+                        <div class="container">
+                            @include('components.empresa.crearBonos')
+                        </div>
                     </div>
-                </div>
-                <!-- Crear usuario desde el admin -->
-                  <div class="col-md-9" id="create-user-admin" style="display: none;">
-                    <div class="container">
-                        @include('auth.passwords.registerAdmin')
+                    <!-- Crear usuario desde el admin -->
+                    <div class="col-md-9" id="create-user-admin" style="display: none;">
+                        <div class="container">
+                            @include('auth.passwords.registerAdmin')
+                        </div>
                     </div>
-                </div>
-                <!-- Ver todos los bonos creados -->
-                <div class="col-md-9" id="show-bonos-admin" style="display: block;"> <!-- Cambié el display a block para que sea visible -->
-                    <div class="container">
-                       <h1>Hola</h1>
-                    </div>
-                </div>
+                    <!-- Ver todos los bonos creados -->
+                    <div class="col-md-9" id="show-bonos-admin" style="display: block;">
+                        <!-- Cambié el display a block para que sea visible -->
+                        <div class="container">
 
-                <!-- Todas las donaciones -->
-                <div class="col-md-9" id="bonosAdmin" style="display: none;">
-                    <div class="container">
-                    @include('components.empresa.bonosFull')
+                            @include('components.empresa.giftsAll')
+                        </div>
                     </div>
-                </div>
+
+                    <!-- Todas las donaciones -->
+                    <div class="col-md-9" id="bonosAdmin" style="display: none;">
+                        <div class="container">
+                            @include('components.empresa.bonosFull')
+                        </div>
+                    </div>
 
                 @endif
             @endif
@@ -80,9 +82,9 @@
     </div>
 
     @if (session()->has('success') || session()->has('error'))
-    <div id="notification" class="alert alert-{{ session()->has('success') ? 'success' : 'danger' }}">
-        {{ session()->has('success') ? session('success') : session('error') }}
-    </div>
+        <div id="notification" class="alert alert-{{ session()->has('success') ? 'success' : 'danger' }}">
+            {{ session()->has('success') ? session('success') : session('error') }}
+        </div>
     @endif
 
     @include('components.footerPage')
@@ -100,6 +102,7 @@
             document.getElementById('userInfoContainer').style.display = 'none';
             markActive(element);
         }
+
         function showUserInfo(element) {
             var formContainer = document.getElementById('form-container');
             var giftsContainer = document.getElementById('gifts-container');
@@ -130,6 +133,7 @@
             document.getElementById('show-bonos-admin').style.display = 'none';
             markActive(element);
         }
+
         function showEstadoDonaciones(element) {
             document.getElementById('userInfoContainer').style.display = 'none';
             document.getElementById('userAll').style.display = 'none';
@@ -139,6 +143,7 @@
             document.getElementById('show-bonos-admin').style.display = 'none';
             markActive(element);
         }
+
         function showFormAdmin(element) {
             document.getElementById('userInfoContainer').style.display = 'none';
             document.getElementById('userAll').style.display = 'none';
@@ -148,6 +153,7 @@
             document.getElementById('show-bonos-admin').style.display = 'none';
             markActive(element);
         }
+
         function CreateUserAdmin(element) {
             document.getElementById('userInfoContainer').style.display = 'none';
             document.getElementById('userAll').style.display = 'none';
@@ -157,6 +163,7 @@
             document.getElementById('show-bonos-admin').style.display = 'none';
             markActive(element);
         }
+
         function ShowAllBonos(element) {
             document.getElementById('userInfoContainer').style.display = 'none';
             document.getElementById('userAll').style.display = 'none';
@@ -184,10 +191,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- DataTables -->
-    <script type="text/javascript" charset="utf8"
-        src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#gifts-table').DataTable();
             $('#user-table').DataTable();
             $('#bonosFull').DataTable();
