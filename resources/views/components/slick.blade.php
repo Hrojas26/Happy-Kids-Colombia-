@@ -22,7 +22,7 @@
         <div class="boxMarcas">
             <img class="img-marcas" src="{{ asset('img/promo6.png') }}" alt="">
         </div>
-        <div class="boxMarcas">
+        <div class="boxMarcas"> 
             <img class="img-marcas" src="{{ asset('img/estampados.png') }}" alt="">
         </div>
         <div class="boxMarcas">
