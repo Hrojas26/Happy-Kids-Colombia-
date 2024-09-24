@@ -27,7 +27,7 @@
         </div>
         <div class="boxMarcas">
             <img class="img-marcas" src="{{ asset('img/americanlogo.png') }}" alt="">
-        </div>
+        </div> 
 
     </div>
 
