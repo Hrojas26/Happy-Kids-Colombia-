@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h1>Donantes - empresas</h1>
-            <table id="bonosFull">
+            <h1>Todas las donaciones</h1>
+            <table id="bonosFull" class="display ">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -54,6 +54,7 @@
     $(document).ready(function() {
     $('#bonosFull').DataTable({
         "order": [[ 0, "desc" ]], // Ordenar por la primera columna (ID) en forma descendente
+        "scrollX": true, // Habilita el desplazamiento horizontal
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros por página",
             "zeroRecords": "No se encontraron registros",
@@ -71,3 +72,9 @@
     });
 });
 </script>
+
+<style>
+    th, td {
+        white-space: nowrap; /* Evita el salto de línea en las celdas */
+    }
+</style>

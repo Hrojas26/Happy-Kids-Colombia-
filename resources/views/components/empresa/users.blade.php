@@ -1,6 +1,8 @@
-<table id="user-table">
+<table id="user-table" class="display" >
+    <h1>Donantes y empresas</h1>
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Email</th>
             <th>Estado</th>
@@ -11,6 +13,9 @@
     <tbody>
         @foreach ($users as $user)
             <tr data-user-id="{{ $user->id }}">
+                <td>
+                    <span class="editable" data-field="name" data-id="{{ $user->id }}">{{ $user->id }}</span>
+                </td>
                 <td>
                     <span class="editable" data-field="name" data-id="{{ $user->id }}">{{ $user->name }}</span>
                 </td>
@@ -149,3 +154,10 @@ $(document).ready(function() {
     });
 });
 </script>
+<script>
+    $(document).ready(function() {
+        $('#user-table').DataTable({
+            order: [[0, 'desc']], // Cambia el índice 0 si tu columna ID no es la primera
+        });
+    });
+    </script>

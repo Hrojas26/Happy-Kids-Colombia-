@@ -1,6 +1,6 @@
 
     <h3 class="mb-3">Bonos reclamados</h3>
-    
+
     @if ($userGifts->isEmpty())
         <div class="alert alert-info text-center" role="alert">
             Actualmente no tienes bonos reclamados, te invitamos a donar juguetes para que puedas reclamar uno
@@ -16,6 +16,7 @@
                     <th>Codigo del bono</th>
                     <th>Fecha de vencimiento</th>
                     <th>Estado</th>
+                    <th>Dirección Empresa</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,7 @@
                                 Estado desconocido
                             @endif
                         </td>
+                        <td>{{ $giftUser->gift->direccionEmpresa }}</td>
                     </tr>
                 @endforeach
             </tbody>

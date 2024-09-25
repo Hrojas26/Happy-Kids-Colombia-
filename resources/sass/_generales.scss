@@ -427,3 +427,10 @@ button.btn-hkc:hover {
 div#payment-selection_payments_item-207_label{
    font-size: 0px !important;
  }
+ .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: #A672D8;
+}
+.nav-link:hover, .nav-link:focus {
+    color: #A672D8;
+}

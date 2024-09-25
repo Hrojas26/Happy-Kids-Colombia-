@@ -50,6 +50,7 @@
                     <!-- Crear usuario desde el admin -->
                     <div class="col-md-9" id="create-user-admin" style="display: none;">
                         <div class="container">
+                            <h1>Crea un usuario o una empresa</h1>
                             @include('auth.passwords.registerAdmin')
                         </div>
                     </div>

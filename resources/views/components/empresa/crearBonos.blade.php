@@ -1,5 +1,5 @@
+<h1 class="mb-4">Crea tu bono de descuento</h1>
 <div class="container mt-5">
-    <h2 class="mb-4">Crea tu bono de descuento</h2>
     <form action="{{ route('crear.bono') }}" method="POST"  enctype="multipart/form-data">
         @csrf
         <div class="mb-3">

@@ -1,10 +1,9 @@
-
-
 <h1>Bonos creados</h1>
 
 <table id="gifts-table" class="display">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Description</th>
             <th>URL Image</th>
@@ -13,12 +12,13 @@
         </tr>
     </thead>
     <tbody>
-        @if (session('gifts') && is_array(session('gifts')) && count(session('gifts')) > 0)
-            @foreach (session('gifts') as $gift)
+        @if ($gifts && $gifts->count() > 0)
+            @foreach ($gifts as $gift)
                 <tr>
+                    <td>{{ $gift->id }}</td>
                     <td>{{ $gift->name }}</td>
                     <td>{{ $gift->description }}</td>
-                    <td>{{ $gift->urlimage }}</td>
+                    <td><img src="{{ $gift->urlimage }}" alt="{{ $gift->name }}" style="width: 50px;"></td>
                     <td>
                         @switch($gift->state)
                             @case(1)
@@ -40,7 +40,7 @@
                                 Estado desconocido
                         @endswitch
                     </td>
-                    <td>{{ $gift->created_at->format('d/m/Y') }}</td> <!-- Suponiendo que tienes un campo de fecha -->
+                    <td>{{ $gift->created_at->format('d/m/Y') }}</td>
                 </tr>
             @endforeach
         @else
@@ -51,11 +51,3 @@
     </tbody>
 </table>
 
-<script>
-$(document).ready(function() {
-    // Inicializa DataTables con ordenación descendente en la columna ID
-    $('#gifts-table').DataTable({
-        "order": [[ 0, "desc" ]] // Ordenar por la primera columna (ID) en forma descendente
-    });
-});
-</script>
