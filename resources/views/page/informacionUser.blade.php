@@ -43,7 +43,7 @@
             @include('components.estadoGraficoMisRegalos')
             @include('components.estadoMisRegalos')
         </div>
-        
+
         <div class="row info-user">
             @include('components.bonos')
         </div>
@@ -53,11 +53,13 @@
     </div>
     @include('components.footerPage')
 
-    <!-- CSS de DataTables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 
     <!-- jQuery (necesario para DataTables) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- CSS de DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+
 
     <!-- DataTables -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>

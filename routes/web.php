@@ -7,7 +7,9 @@ use App\Http\Controllers\InformationUserController;
 use App\Http\Controllers\Auth\UpdatePasswordController;
 use App\Http\Controllers\GiftUserController;
 use App\Http\Controllers\CretaeUserController;
+use App\Http\Controllers\DashboradController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 
 
 /*
@@ -22,15 +24,15 @@ use App\Http\Controllers\UserController;
 */
 
 
-
-
-Route::get('/', function () {
-return view('page.index');
-})->name('home');
+/*
 
 Route::get('/', function () {
     return view('page.index');
-})->name('home');
+})->name('home');*/
+
+Route::get('/', function () {
+    return view('page.index');
+})->name('/');
 
 Route::get('/bonos', function () {
     return view('page.bonos');
@@ -52,11 +54,16 @@ Route::get('/donaciones', function () {
     return view('page.donaRegalo');
 })->name('donaRegalo')->middleware('auth');
 
-
+Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
+    Route::get('/', [DashboradController::class, 'index'])->name('dashboard');
+});
+/*
 Route::get('/dashboard', function () {
-    return view('page.empresa.dashboard');
+    Route::get('/', [DashboradController::class, 'index'])->name('dashboard');
+    //return view('page.empresa.dashboard', ['users' => User::all()]);
+    //return view('page.empresa.dashboard');
 })->name('dashboard')->middleware('auth');
-
+*/
 Route::post('/donaregalos', [DonationController::class, 'store'])->name('donaciones.store');
 Route::get('/gifts', [GiftsController::class, 'index'])->name('gifts.index');
 Route::post('/crear-bono', [GiftsController::class, 'create'])->name('crear.bono');
@@ -79,5 +86,4 @@ Route::post('/reclamar-bono', [GiftUserController::class, 'create'])->name('recl
 Route::post('/edit-all', [UserController::class, 'saveUserEdit'])->name('edit.user');
 Route::put('/donations/{donation}', [DonationController::class, 'updateStatus'])->name('updateStatus');
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
