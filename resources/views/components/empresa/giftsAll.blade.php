@@ -1,5 +1,5 @@
-<h1 class="" >Bonos creados</h1>
-<p class="" >Aquí podras ver todos los bonos que los donantes han creado</p>
+<h1 class="">Bonos creados</h1>
+<p class="">Aquí podras ver todos los bonos que los donantes han creado</p>
 
 <table id="gifts-table" class="display">
     <thead>
@@ -24,19 +24,24 @@
                         @switch($gift->state)
                             @case(1)
                                 Pendiente por reclamar
-                                @break
+                            @break
+
                             @case(2)
                                 Reclamado
-                                @break
+                            @break
+
                             @case(3)
                                 Canjeada
-                                @break
+                            @break
+
                             @case(4)
                                 Expirada
-                                @break
+                            @break
+
                             @case(5)
                                 Desactivada
-                                @break
+                            @break
+
                             @default
                                 Estado desconocido
                         @endswitch
@@ -53,8 +58,10 @@
 </table>
 <script>
     $(document).ready(function() {
-    $('#gifts-table').DataTable({
-        order: [[0, 'desc']], // Índice 0 para la primera columna (ID)
+        $('#gifts-table').DataTable({
+            order: [
+                [0, 'desc']
+            ], // Índice 0 para la primera columna (ID)
+        });
     });
-});
 </script>
