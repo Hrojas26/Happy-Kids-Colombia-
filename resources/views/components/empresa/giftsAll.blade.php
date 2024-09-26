@@ -1,9 +1,10 @@
-<h1>Bonos creados</h1>
+<h1 class="" >Bonos creados</h1>
+<p class="" >Aquí podras ver todos los bonos que los donantes han creado</p>
 
 <table id="gifts-table" class="display">
     <thead>
         <tr>
-            <th>ID</th>
+            <th>id</th>
             <th>Name</th>
             <th>Description</th>
             <th>URL Image</th>
@@ -15,14 +16,14 @@
         @if ($gifts && $gifts->count() > 0)
             @foreach ($gifts as $gift)
                 <tr>
-                    <td>{{ $gift->id }}</td>
+                    <td data-order="{{ $gift->id }}">{{ $gift->id }}</td> <!-- Aquí se añade el data-order -->
                     <td>{{ $gift->name }}</td>
                     <td>{{ $gift->description }}</td>
                     <td><img src="{{ $gift->urlimage }}" alt="{{ $gift->name }}" style="width: 50px;"></td>
                     <td>
                         @switch($gift->state)
                             @case(1)
-                                Pendiente por canjear
+                                Pendiente por reclamar
                                 @break
                             @case(2)
                                 Reclamado
@@ -50,4 +51,10 @@
         @endif
     </tbody>
 </table>
-
+<script>
+    $(document).ready(function() {
+    $('#gifts-table').DataTable({
+        order: [[0, 'desc']], // Índice 0 para la primera columna (ID)
+    });
+});
+</script>

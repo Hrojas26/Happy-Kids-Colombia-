@@ -50,7 +50,8 @@
                     <!-- Crear usuario desde el admin -->
                     <div class="col-md-9" id="create-user-admin" style="display: none;">
                         <div class="container">
-                            <h1>Crea un usuario o una empresa</h1>
+                            <h1 class="text-center" >Crea un usuario o una empresa</h1>
+                            <p class="text-center" >Crea usuarios y empresas desde este modulo</p>
                             @include('auth.passwords.registerAdmin')
                         </div>
                     </div>
@@ -195,6 +196,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready(function() {
+            order: [[0, 'desc']], // Índice 0 para la primera columna (ID)
             $('#gifts-table').DataTable();
             $('#user-table').DataTable();
             $('#bonosFull').DataTable();

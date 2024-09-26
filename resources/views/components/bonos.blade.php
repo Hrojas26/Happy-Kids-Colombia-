@@ -8,7 +8,7 @@
 
         <button class="btn btn-hkc">Donar Ahora</button>
     @else
-        <table class="table" id="bonos">
+        <table class="table display" id="bonos">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -28,7 +28,7 @@
                         <td>{{ $giftUser->gift->expirationDate }}</td>
                         <td>
                             @if ($giftUser->state == 1)
-                                Pendiente por canjear
+                                Pendiente por reclamar
                             @elseif ($giftUser->state == 2)
                                 Reclamado
                             @elseif ($giftUser->state == 3)
