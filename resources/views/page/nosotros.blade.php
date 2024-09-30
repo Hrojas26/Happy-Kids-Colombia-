@@ -6,14 +6,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="//fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- Scripts -->
     <script
-        src="https://code.jquery.com/jquery-3.0.0.min.js"
+        src="//code.jquery.com/jquery-3.0.0.min.js"
         integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
         crossorigin="anonymous">
     </script>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Scripts -->
 </head>
 <body id="nosotros">

@@ -7,10 +7,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="//fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -50,8 +50,8 @@
                     <!-- Crear usuario desde el admin -->
                     <div class="col-md-9" id="create-user-admin" style="display: none;">
                         <div class="container">
-                            <h1 class="text-center" >Crea un usuario o una empresa</h1>
-                            <p class="text-center" >Crea usuarios y empresas desde este modulo</p>
+                            <h1>Crea un usuario o una empresa</h1>
+                            <p>Crea usuarios y empresas desde este modulo</p>
                             @include('auth.passwords.registerAdmin')
                         </div>
                     </div>
@@ -73,7 +73,7 @@
 
                 @endif
             @endif
-            <!-- infomraicon de usuario -->
+            <!-- informacioOn deL usuario -->
             <div class="col-md-9" id="userInfoContainer" style="display: none;">
                 <div class="container">
                     @include('components.updatePasswordUser')
@@ -187,19 +187,24 @@
         }
     </script>
     <!-- CSS de DataTables -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 
     <!-- jQuery (necesario para DataTables) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- DataTables -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
     <script>
         $(document).ready(function() {
-            order: [[0, 'desc']], // Índice 0 para la primera columna (ID)
+            order: [
+                [0, 'desc']
+            ], // Índice 0 para la primera columna (ID)
             $('#gifts-table').DataTable();
             $('#user-table').DataTable();
             $('#bonosFull').DataTable();
+
         });
     </script>
 </body>

@@ -1,2 +1,24 @@
-@import "~/node_modules/bootstrap/scss/bootstrap";
+
+/* Fonts*/
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+/* Variables
+@import 'variables';*/
+
+/* Bootstrap*/
+
+@import './../../node_modules/bootstrap/dist/css/bootstrap.css';
+
+/* Bootstrap icons*/
+
+@import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+/* Generales*/
+
+@import './_generales.css';
+
+/* 3D*/
+
+@import './_3d.css';
+/*@import "~/node_modules/bootstrap/scss/bootstrap";*/
 

@@ -1,6 +1,6 @@
 @include('components.headerPage')
 {{-- popup --}}
-@include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','videoUrl' => asset('img/robot.mp4'),'modalDescripcion' => 'explora nuestra web y juega con nuestros objetos 3D, oprime y arrastra.'])
+{{-- @include('components.Popup', ['popUpId' => 'PopUpHome','title' => '¡Interactua con nuestros objetos 3D!','videoUrl' => asset('img/robot.mp4'),'modalDescripcion' => 'explora nuestra web y juega con nuestros objetos 3D, oprime y arrastra.']) --}}
 {{-- popup end --}}
 
 <div class="rox">
@@ -13,11 +13,12 @@
             <div class="card w-40 cardbanner">
                 <!-- Ejemplo de uso en una vista Blade -->
                 <div class="card-body">
-                  <h5 class="card-title">BIENVENIDO A HKC</h5>
-                  <p class="card-text">"La magia de la infancia está en tus manos."</p>
-                  <a href="{{ route('donaRegalo') }}" class="btn btn-dark">¡ DONA UN JUGUETE !</a>
+                    <h3 class="card-title"> {{ config('app.name', 'Laravel') }}</h3>
+                    <p class="card-text fs-5">"Somos la única plataforma web que te permite ver en tiempo real el
+                        recorrido de tus donaciones."</p>
+                    <a href="{{ route('donaRegalo') }}" class="btn btn-dark">DONAR</a>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
 </div>
@@ -49,57 +50,61 @@
         </div> --}}
         {{-- Carrousel para usar end --}}
     </div>
-
+    <!-- Caja de Donaciones Totales -->
     <div class="row">
-        <div class="container text-center mt-5">
-            <div class="alert alert-info" role="alert">
-             
-                <h5 class="alert-heading"><i class="bi bi-question-circle"></i> Sabías que en Happy Kids Colombia puedes seguir el trayecto de tus donaciones </h5>
-                <p class="mb-0" >Así es, tienes la posibilidad de ver cómo tus donaciones están impactando en la vida de los niños. ¡Mantente informado en todo momento! </p>
-
-            </div>
+        <div class="row">
+            <h3 class="text-center mt-5">¿Cómo funciona happy kids colombia?</h3>
+            <p class="text-center ">Te explicaremos cómo funciona Happy Kids Colombia y cómo puedes participar en este
+                proyecto como donante.</p>
         </div>
         <div class="row row-cols-1 row-cols-md-2 g-4 mt-0">
             <div class="col">
-              <div class="card grow-on-hover">
-                <img src="{{ asset('img/card1.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Cambia una Vida</h5>
-                  <p class="card-text">Tu donación tiene un impacto directo en la vida de un niño. Con tu contribución, proporcionas alegría, esperanza y oportunidades para un futuro mejor.</p>
+                <div class="card grow-on-hover">
+                    <img src="{{ asset('img/card1.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">1. Registrate</h5>
+                        <p class="card-text">Crea tu cuenta en nuestra plataforma para empezar a donar. Completa el
+                            formulario con tus datos y únete a la comunidad de donantes.</p>
+                    </div>
                 </div>
-              </div>
             </div>
             <div class="col">
-              <div class="card grow-on-hover">
-                <img src="{{ asset('img/card2.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Forma Parte de Nuestra Comunidad</h5>
-                  <p class="card-text">Al donar, te unes a una comunidad solidaria comprometida con el bienestar de los demás. Juntos, hacemos posible que más niños tengan acceso a juguetes y experiencias positivas.</p>
+                <div class="card grow-on-hover">
+                    <img src="{{ asset('img/card2.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">2. Dona Juguetes</h5>
+                        <p class="card-text">Dona tus juguetes. No importa si son nuevos o usados, ya sea uno o muchos;
+                            tu contribución hará una gran diferencia en la vida de los niños.</p>
+                    </div>
                 </div>
-              </div>
             </div>
             <div class="col">
-              <div class="card grow-on-hover">
-                <img src="{{ asset('img/card3.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Reduce, Reutiliza, Recicla</h5>
-                  <p class="card-text">Donar juguetes usados promueve la sostenibilidad ambiental al reducir residuos y fomentar la reutilización. Contribuyes a cuidar el planeta al dar una segunda vida a los juguetes.</p>
+                <div class="card grow-on-hover">
+                    <img src="{{ asset('img/card3.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">3. Reclama tu Bono</h5>
+                        <p class="card-text">Si has donado 10 juguetes, podrás reclamar un bono de descuento en
+                            diferentes establecimientos disponibles. ¡Aprovecha esta recompensa por tu generosidad!</p>
+                    </div>
                 </div>
-              </div>
             </div>
             <div class="col">
-              <div class="card grow-on-hover">
-                <img src="{{ asset('img/card4.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Recompensa por tu Generosidad</h5>
-                  <p class="card-text">Al donar 10 juguetes, recibes un cupón de descuento exclusivo como agradecimiento por tu generosidad. Disfruta de descuentos como una forma de reconocimiento por tu contribución a nuestra causa solidaria.</p>
+                <div class="card grow-on-hover">
+                    <img src="{{ asset('img/card4.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">4. Canjea tu Bono</h5>
+                        <p class="card-text">Te enviaremos el bono a tu correo. Úsalo en diferentes establecimientos de
+                            tu elección y disfruta de descuentos especiales. ¡Gracias a ti por ser parte de este
+                            proyecto y por hacer feliz a un niño!</p>
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
     </div>
 
 </div>
+
+
 @include('components.section')
 @include('components.slick')
 @include('components.footerPage')

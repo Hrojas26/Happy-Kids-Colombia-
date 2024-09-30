@@ -32,7 +32,7 @@ body{
     width: 100%;
 }
 nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm {
-    background: linear-gradient(to right, #A46FD9, #D1A4CB) !important;
+    background: linear-gradient(to right, #ab08d4, #e06adc) !important;
 }
 .navbar-brand
 {
@@ -144,7 +144,7 @@ a.nav-link {
     max-width: 100%;
     height: auto;
   }
-  //debe estar en block automaticamente
+  /*debe estar en block automaticamente*/
 
 #PopUpHome {
     display: block !important;
@@ -251,7 +251,7 @@ footer.d-flex.flex-wrap.justify-content-between.align-items-center.py-3.my-4.bor
 .row.row-cols-1.row-cols-md-2.row-cols-lg-3 {
     margin-left: 25px;
 }
-// aqui
+/* aqui */
 
 .card-img {
     width: 250px;
@@ -431,6 +431,208 @@ div#payment-selection_payments_item-207_label{
     color: var(--bs-nav-pills-link-active-color);
     background-color: #A672D8;
 }
-.nav-link:hover, .nav-link:focus {
-    color: #A672D8;
+/* .nav-link:hover, .nav-link:focus {
+//     color: #A672D8;
+// }*/
+.btn-excel {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    border-radius: 0px;
+    padding: 3px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-excel i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 18px;
+}
+
+.btn-excel:hover {
+    background-color: #218838; /* Un verde más oscuro al pasar el mouse */
+}
+.box-delivery{
+    width: 236px;
+    overflow: hidden;
+    height: 115px;
+}
+.img-delivery{
+    position: relative;
+    top: -50px !important;
+}
+.border-hkc{
+    border-radius: 4px;
+    border: 1px solid#A672D8;
+}
+#downloadExcel:hover{
+ background: #59228d;
+}
+#radius-shape-1 {
+    height: 220px;
+    width: 220px;
+    top: -60px;
+    left: -130px;
+    background: radial-gradient(#44006b, #ad1fff);
+    overflow: hidden;
+}
+
+#radius-shape-2 {
+    border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    bottom: -60px;
+    right: -110px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(#44006b, #ad1fff);
+    overflow: hidden;
+}
+
+.bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.9) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+}
+/* Contenedor de las opciones */
+.form-check-label {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el radio button y el texto */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Ocultar el input radio nativo */
+.visually-hidden {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo del botón personalizado */
+.custom-radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #763199;
+    display: inline-block;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Efecto cuando está seleccionado */
+.form-check-input:checked + .custom-radio {
+    background-color: #763199;
+    border-color: #763199;
+}
+
+/* Añadir el círculo interno del radio button */
+.custom-radio::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+/* Mostrar el círculo interno cuando el radio está seleccionado */
+.form-check-input:checked + .custom-radio::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Ajustar los márgenes entre los radios */
+.d-flex.gap-3 {
+    gap: 30px; /* Ajusta este valor según el espacio que quieras entre las opciones */
+}
+
+/* Cambiar el color al hacer hover sobre la opción */
+.form-check-label:hover {
+    color: #763199;
+}
+/* Estilo del contenedor */
+.form-check-label {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el checkbox y el texto */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Ocultar el input checkbox nativo */
+.visually-hidden {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo del checkbox personalizado */
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #763199;
+    border-radius: 0.25em; /* Puedes usar border-radius: 50% para hacerlo circular si lo prefieres */
+    display: inline-block;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilo cuando el checkbox está seleccionado */
+.form-check-input:checked + .custom-checkbox {
+    background-color: #763199;
+    border-color: #763199;
+}
+
+/* Añadir el icono de check */
+.custom-checkbox::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 7px; /* Ajustamos el tamaño del check */
+    height: 10px; /* Ajustamos el tamaño del check */
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transition: transform 0.3s ease;
+}
+
+/* Mostrar el checkmark cuando el checkbox está seleccionado */
+.form-check-input:checked + .custom-checkbox::after {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+.forgot-password-link {
+    color: #A672D8; /* Cambia el color para que coincida con el esquema */
+    font-weight: bold;
+    text-decoration: none; /* Elimina el subrayado */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Añade una transición suave */
+}
+
+.forgot-password-link:hover {
+    color: #7442a3; /* Cambia el color al pasar el ratón */
+    text-decoration: underline; /* Puedes decidir subrayar solo al hover */
+}
+
+/* Estilo general para el placeholder */
+input::placeholder {  
+    color: hsl(218, 81%, 85%); /* Color del placeholder */
+    opacity: 0.7; /* Opacidad del placeholder */
+    font-style: italic; /* Estilo de fuente (opcional) */
+}
+
+/* Estilo cuando el campo está en foco (active) */
+input:focus::placeholder {
+    color: hsl(0, 0%, 85%); /* Color del placeholder al enfocar el campo */
+}
+p.card-text {
+    text-align: center;
 }

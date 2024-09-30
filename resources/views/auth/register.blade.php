@@ -1,99 +1,101 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<div id="particles-js" style="position: absolute; width: 100%; height: 893px; z-index: -1;"></div>
+<section class="background-radial-gradient overflow-hidden">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('crear.user') }}">
-                        @csrf
+    <style>
+        body {
+            background: #AD0CD4;
+        }
+    </style>
 
-                        <div class="form-group">
-                            <label for="tipo">Seleccione el tipo de usuario:</label><br>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tipo" id="persona" value="persona" checked>
-                                <label class="form-check-label" for="persona">Persona</label>
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                    Regístrate <br />
+                    <span style="color: hsl(218, 81%, 75%)">crea tu cuenta</span>
+                </h1>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+                <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+                <div class="card bg-glass">
+                    <div class="card-body px-4 py-5 px-md-5">
+                        <form class="w-100" method="POST" action="{{ route('crear.user') }}">
+                            @csrf
+
+                            <!-- Tipo de usuario -->
+                            <div class="form-group mb-4 text-center">
+                                <label class="fs-4" for="tipo">¿Cómo te quieres registrar?</label><br>
+                                <div class="d-flex mt-2 justify-content-center gap-3 align-items-center">
+                                    <label class="form-check-label" for="persona">
+                                        <input class="form-check-input visually-hidden" type="radio" name="tipo" id="persona" value="persona" checked>
+                                        <span class="custom-radio"></span> Donante
+                                    </label>
+                                    <label class="form-check-label" for="empresa">
+                                        <input class="form-check-input visually-hidden" type="radio" name="tipo" id="empresa" value="empresa">
+                                        <span class="custom-radio"></span> Empresa
+                                    </label>
+                                </div>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="tipo" id="empresa" value="empresa">
-                                <label class="form-check-label" for="empresa">Empresa</label>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end" id="nameLabel">Nombre</label>
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                            <!-- Nombre -->
+                            <div class="form-outline mb-4">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Nombre" required autocomplete="name" autofocus>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
+                            <!-- Email -->
+                            <div class="form-outline mb-4">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Correo Electrónico" required autocomplete="email">
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
+                            <!-- Password -->
+                            <div class="form-outline mb-4">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Contraseña" required autocomplete="new-password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <!-- Confirm Password -->
+                            <div class="form-outline mb-4">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirma la contraseña" required autocomplete="new-password">
                             </div>
-                        </div>
 
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-hkc">
-                                    {{ __('Registrate') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                            <!-- Botón de registro -->
+                            <button type="submit" class="btn btn-hkc w-100 mb-4">{{ __('Regístrate') }}</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+</section>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('persona').addEventListener('change', function () {
-            var label = document.getElementById('nameLabel');
-            label.textContent = 'Nombre';
+            document.getElementById('name').setAttribute('placeholder', 'Nombre');
         });
 
         document.getElementById('empresa').addEventListener('change', function () {
-            var label = document.getElementById('nameLabel');
-            label.textContent = 'Empresa';
+            document.getElementById('name').setAttribute('placeholder', 'Empresa');
         });
     });
 </script>
+@endsection

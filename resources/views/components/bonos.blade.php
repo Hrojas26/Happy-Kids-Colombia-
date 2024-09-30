@@ -6,7 +6,7 @@
             Actualmente no tienes bonos reclamados, te invitamos a donar juguetes para que puedas reclamar uno
         </div>
 
-        <button class="btn btn-hkc">Donar Ahora</button>
+        <a href="{{ route('donaRegalo') }}" class="btn btn-hkc">DONAR</a>
     @else
         <table class="table display" id="bonos">
             <thead>
