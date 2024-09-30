@@ -49,11 +49,11 @@
         </div> --}}
         {{-- Carrousel para usar end --}}
     </div>
-
+<!-- Caja de Donaciones Totales -->
     <div class="row">
         <div class="container text-center mt-5">
             <div class="alert alert-info" role="alert">
-             
+
                 <h5 class="alert-heading"><i class="bi bi-question-circle"></i> Sabías que en Happy Kids Colombia puedes seguir el trayecto de tus donaciones </h5>
                 <p class="mb-0" >Así es, tienes la posibilidad de ver cómo tus donaciones están impactando en la vida de los niños. ¡Mantente informado en todo momento! </p>
 
@@ -100,6 +100,8 @@
     </div>
 
 </div>
+
+@include('components.FrontGift')
 @include('components.section')
 @include('components.slick')
 @include('components.footerPage')

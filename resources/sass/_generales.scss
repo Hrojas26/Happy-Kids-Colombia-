@@ -434,3 +434,38 @@ div#payment-selection_payments_item-207_label{
 .nav-link:hover, .nav-link:focus {
     color: #A672D8;
 }
+.btn-excel {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    border-radius: 0px;
+    padding: 3px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-excel i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 18px;
+}
+
+.btn-excel:hover {
+    background-color: #218838; /* Un verde más oscuro al pasar el mouse */
+}
+.box-delivery{
+    width: 236px;
+    overflow: hidden;
+    height: 115px;
+}
+.img-delivery{
+    position: relative;
+    top: -50px !important;
+}
+.border-hkc{
+    border-radius: 4px;
+    border: 1px solid#A672D8;
+}
+#downloadExcel:hover{
+ background: #7343a0;
+}

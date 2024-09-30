@@ -78,3 +78,7 @@ if (container) {
 } else {
     console.error("El contenedor 3D no se encontró.");
 }
+
+
+
+

@@ -50,8 +50,8 @@
                     <!-- Crear usuario desde el admin -->
                     <div class="col-md-9" id="create-user-admin" style="display: none;">
                         <div class="container">
-                            <h1 class="text-center" >Crea un usuario o una empresa</h1>
-                            <p class="text-center" >Crea usuarios y empresas desde este modulo</p>
+                            <h1 >Crea un usuario o una empresa</h1>
+                            <p >Crea usuarios y empresas desde este modulo</p>
                             @include('auth.passwords.registerAdmin')
                         </div>
                     </div>
@@ -73,7 +73,7 @@
 
                 @endif
             @endif
-            <!-- infomraicon de usuario -->
+            <!-- informacioOn deL usuario -->
             <div class="col-md-9" id="userInfoContainer" style="display: none;">
                 <div class="container">
                     @include('components.updatePasswordUser')

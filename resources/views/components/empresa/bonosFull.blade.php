@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -43,13 +45,17 @@
                         </tr>
                     @endforeach
                 </tbody>
+
             </table>
         </div>
     </div>
-
+    <button id="downloadExcel" class="btn-excel btn-hkc">
+        <i class="far fa-file-excel "></i> Descargar informe
+    </button>
+<!-- Librería XLSX (debe estar antes de usarla en cualquier script) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<!-- Librería XLSX (debe estar antes de usarla en cualquier script) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-
 <script>
     $(document).ready(function() {
     $('#bonosFull').DataTable({
@@ -72,7 +78,6 @@
     });
 });
 </script>
-
 <style>
     th, td {
         white-space: nowrap; /* Evita el salto de línea en las celdas */

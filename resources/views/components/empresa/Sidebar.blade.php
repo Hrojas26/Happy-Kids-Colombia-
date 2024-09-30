@@ -52,6 +52,22 @@
                         <svg class="bi me-2" width="16" height="16"><use xlink:href="#donaciones-all"></use></svg>
                         Donaciones
                     </a>
+                     <!-- Submenú que se desplegará al hacer clic en Donaciones -->
+                     <div class="collapse" id="donacionesSubmenu">
+                        <ul class="nav flex-column ms-3">
+                            <li class="nav-item">
+                                <a href="#sub-opcion-1" class="nav-link" onclick="showSubOpcion1(this)">
+                                    Sub-Opción 1
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#sub-opcion-2" class="nav-link" onclick="showSubOpcion2(this)">
+                                    Sub-Opción 2
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </li>
 
 
