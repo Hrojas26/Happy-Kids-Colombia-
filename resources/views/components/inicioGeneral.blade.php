@@ -101,7 +101,7 @@
 
 </div>
 
-@include('components.FrontGift')
+
 @include('components.section')
 @include('components.slick')
 @include('components.footerPage')
