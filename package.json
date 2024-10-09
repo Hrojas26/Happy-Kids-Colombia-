@@ -16,7 +16,6 @@
         "bootstrap-icons": "^1.11.3",
         "canvas-confetti": "^1.9.3",
         "laravel-vite-plugin": "^1.0.5",
-        "popper.js": "^1.16.1",
-        "three": "^0.163.0"
+        "popper.js": "^1.16.1"
     }
 }

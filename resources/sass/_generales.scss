@@ -32,7 +32,7 @@ body{
     width: 100%;
 }
 nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm {
-    background: linear-gradient(to right, #A46FD9, #D1A4CB) !important;
+    background: linear-gradient(to right, #ab08d4, #e06adc) !important;
 }
 .navbar-brand
 {
@@ -431,9 +431,9 @@ div#payment-selection_payments_item-207_label{
     color: var(--bs-nav-pills-link-active-color);
     background-color: #A672D8;
 }
-.nav-link:hover, .nav-link:focus {
-    color: #A672D8;
-}
+// .nav-link:hover, .nav-link:focus {
+//     color: #A672D8;
+// }
 .btn-excel {
     display: inline-flex;
     align-items: center;
@@ -632,4 +632,7 @@ input::placeholder {
 /* Estilo cuando el campo está en foco (active) */
 input:focus::placeholder {
     color: hsl(0, 0%, 85%); /* Color del placeholder al enfocar el campo */
+}
+p.card-text {
+    text-align: center;
 }
