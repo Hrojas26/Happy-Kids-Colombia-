@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\View;
 
 class DashboradController extends Controller
 {
-
     public function index()
     {
         $currentUser = \Auth::user();
@@ -22,7 +21,6 @@ class DashboradController extends Controller
 
         //$gifts = Gifts::get();
         $donationStatuses = StateDonation::with('donation')->get();
-
         return View::make('page.empresa.dashboard', ['users' => User::all(), 'gifts' => $gifts, 'donationes' => $donationStatuses]);
     }
 }
