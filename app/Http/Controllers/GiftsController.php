@@ -19,7 +19,7 @@ class GiftsController extends Controller
         if ($gifts->isEmpty()) {
             $message = '';
         } else {
-            $message = null; 
+            $message = null;
         }
 
         return view('page.bonos', ['gifts' => $gifts, 'message' => $message]);
@@ -30,34 +30,33 @@ class GiftsController extends Controller
      */
     public function create(Request $request)
     {
-             // Validar los datos del formulario
-             $request->validate([
-                'name' => 'required|string|max:255',
-                'description' => 'required|string',
-                'codigoBono' => 'required|string',
-                'urlimage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de la imagen
-                'expirationDate' => 'required|date',
-                'direccionEmpresa' => 'required|string',
-            ]);
+        // Validar los datos del formulario
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'codigoBono' => 'required|string',
+            'urlimage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de la imagen
+            'expirationDate' => 'required|date',
+            'direccionEmpresa' => 'required|string',
+        ]);
 
-            $imagenNombre = time().'.'.$request->urlimage->extension(); // Nombre único para la imagen
-            $request->urlimage->move(public_path('images'), $imagenNombre);
-            $urlImagen = URL::to('/').'/images/'.$imagenNombre;
+        $imagenNombre = time() . '.' . $request->urlimage->extension(); // Nombre único para la imagen
+        $request->urlimage->move(public_path('storage/images/'), $imagenNombre);
+        $urlImagen = URL::to('/') . '/storage/images/' . $imagenNombre;
 
-            // Crear un nuevo regalo
-            $gift = new Gifts();
-            $gift->name = $request->input('name');
-            $gift->description = $request->input('description');
-            $gift->urlimage = $urlImagen;
-            $gift->company =auth()->user()->id;
-            $gift->codigobono = $request->input('codigoBono');
-            $gift->state = 1;
-            $gift->expirationDate = $request->input('expirationDate');
-            $gift->direccionEmpresa = $request->input('direccionEmpresa'); // Asigna la dirección
-            $gift->save();
-            // Redireccionar a alguna página después de crear el regalo (por ejemplo, a la lista de regalos)
-            return redirect()->route('gifts.all')->with('success', 'Gift created successfully.');
-
+        // Crear un nuevo regalo
+        $gift = new Gifts();
+        $gift->name = $request->input('name');
+        $gift->description = $request->input('description');
+        $gift->urlimage = $urlImagen;
+        $gift->company = auth()->user()->id;
+        $gift->codigobono = $request->input('codigoBono');
+        $gift->state = 1;
+        $gift->expirationDate = $request->input('expirationDate');
+        $gift->direccionEmpresa = $request->input('direccionEmpresa'); // Asigna la dirección
+        $gift->save();
+        // Redireccionar a alguna página después de crear el regalo (por ejemplo, a la lista de regalos)
+        return redirect()->route('gifts.all')->with('success', 'Gift created successfully.');
     }
 
     /**
