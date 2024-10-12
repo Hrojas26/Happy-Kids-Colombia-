@@ -66,7 +66,6 @@
 </head>
 <body>
     <div class="container">
-        <img src="{{ asset('img/logohkc.png') }}" alt="Logo" class="logo"> <!-- Cambia la ruta por la correcta -->
         <h1>Activar Empresa</h1>
         <p>Buen día administrador, la empresa <strong>{{ $nombreEmpresa }} </strong> se ha registrado y debe ser confirmada.</p>
         <p>Por favor, ve a tu dashboard y actívala. De lo contrario, ignora este mensaje.</p>
