@@ -4,7 +4,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activación de Empresa</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,7 +65,7 @@
 </head>
 <body>
     <div class="container">
-        <div>
+            <title>Activación de Empresa</title>
             <img src="{{ asset('img/logohkc.png') }}" alt="Logo" class="logo"> <!-- Cambia la ruta por la correcta -->
             <h1>Activar Empresa</h1>
             <p>Buen día administrador, la empresa <strong>{{ $nombreEmpresa }} </strong> se ha registrado y debe ser confirmada.</p>
@@ -75,7 +74,6 @@
             <div class="footer">
                 &copy; {{ date('Y') }} Happy Kids Colombia.
             </div>
-        </div>
     </div>
 </body>
 </html>
