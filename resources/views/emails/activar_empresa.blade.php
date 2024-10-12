@@ -1,5 +1,10 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activación de Empresa</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,16 +63,19 @@
         }
     </style>
     
-
-    <title>Activación de Empresa</title>
+</head>
+<body>
     <div class="container">
-        <img src="{{ asset('img/logohkc.png') }}" alt="Logo" class="logo"> <!-- Cambia la ruta por la correcta -->
-        <h1>Activar Empresa</h1>
-        <p>Buen día administrador, la empresa <strong>{{ $nombreEmpresa }} </strong> se ha registrado y debe ser confirmada.</p>
-        <p>Por favor, ve a tu dashboard y actívala. De lo contrario, ignora este mensaje.</p>
-        <a href="{{ url('/dashboard') }}" class="btn btn-hkc">Activar</a> <!-- Enlace al dashboard -->
-        <div class="footer">
-            &copy; {{ date('Y') }} Happy Kids Colombia.
+        <div>
+            <img src="{{ asset('img/logohkc.png') }}" alt="Logo" class="logo"> <!-- Cambia la ruta por la correcta -->
+            <h1>Activar Empresa</h1>
+            <p>Buen día administrador, la empresa <strong>{{ $nombreEmpresa }} </strong> se ha registrado y debe ser confirmada.</p>
+            <p>Por favor, ve a tu dashboard y actívala. De lo contrario, ignora este mensaje.</p>
+            <a href="{{ url('/dashboard') }}" class="btn btn-hkc">Activar</a> <!-- Enlace al dashboard -->
+            <div class="footer">
+                &copy; {{ date('Y') }} Happy Kids Colombia.
+            </div>
         </div>
     </div>
-
+</body>
+</html>
