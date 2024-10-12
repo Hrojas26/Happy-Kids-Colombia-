@@ -35,7 +35,7 @@ class CretaeUserController extends Controller
         if ($data['tipo'] == 'persona') {
             $dat = 1;
         }else{
-            $asunto = 'Activar empresa en HKC';
+            $asunto = 'Activar empresa';
             $mensaje = 'Buen día ADMINISTRADOR la empresa ' . $data['name'] . ' se ha registrado y debe ser confirmada, porfavor ve a tu dashboard y activala, de lo contrario ignora este mensaje. ';
             $emailUsuario = env('MAIL_TO_ADDRESS'); // Obtiene la dirección de correo electrónico del archivo .env
 
