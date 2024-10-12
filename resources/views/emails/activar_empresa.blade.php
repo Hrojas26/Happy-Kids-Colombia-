@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activación de Empresa</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,8 +58,8 @@
         }
     </style>
     
-</head>
-<body>
+
+    <title>Activación de Empresa</title>
     <div class="container">
         <img src="{{ asset('img/logohkc.png') }}" alt="Logo" class="logo"> <!-- Cambia la ruta por la correcta -->
         <h1>Activar Empresa</h1>
@@ -75,5 +70,4 @@
             &copy; {{ date('Y') }} Happy Kids Colombia.
         </div>
     </div>
-</body>
-</html>
+
