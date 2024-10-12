@@ -43,15 +43,13 @@
         }
         .btn {
             display: inline-block;
-            background-color: #007bff; /* Color de fondo del botón */
-            color: white;
             padding: 10px 15px;
             text-decoration: none;
             border-radius: 5px;
             margin-top: 20px;
         }
         .btn-hkc {
-        color: #ffffff;
+        color: #ffffff !important;
         background: #A672D8;
         padding: 10px;
         border-radius: 4px;
