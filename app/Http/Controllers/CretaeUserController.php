@@ -34,15 +34,16 @@ class CretaeUserController extends Controller
 
         if ($data['tipo'] == 'persona') {
             $dat = 1;
-        }else{
+        } else {
             $asunto = 'Activar empresa';
-            $mensaje = 'Buen día ADMINISTRADOR la empresa ' . $data['name'] . ' se ha registrado y debe ser confirmada, porfavor ve a tu dashboard y activala, de lo contrario ignora este mensaje. ';
+            $nombreEmpresa = $data['name']; // El nombre de la empresa que se registró
             $emailUsuario = env('MAIL_TO_ADDRESS'); // Obtiene la dirección de correo electrónico del archivo .env
 
-            $resultadoEnvio = Mail::raw($mensaje, function($message) use ($emailUsuario, $asunto) {
+            // Envía el correo utilizando una plantilla
+            Mail::send('emails.activar_empresa', ['nombreEmpresa' => $nombreEmpresa], function($message) use ($emailUsuario, $asunto) {
                 $message->to($emailUsuario)->subject($asunto);
             });
-          }
+        }
 
         // Crea el usuario sin autenticarlo automáticamente
         $user = User::create([
@@ -57,7 +58,5 @@ class CretaeUserController extends Controller
 
         // Devuelve una respuesta, vista, o realiza una redirección según tu lógica de aplicación
         return redirect()->route('login', ['email' => $data['email']])->with('success', '¡Te has registrado exitosamente! Por favor, inicia sesión.');
-        
-
     }
 }
