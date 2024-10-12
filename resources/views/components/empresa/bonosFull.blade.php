@@ -58,26 +58,55 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
-    $('#bonosFull').DataTable({
-        "order": [[ 0, "desc" ]], // Ordenar por la primera columna (ID) en forma descendente
-        "scrollX": true, // Habilita el desplazamiento horizontal
-        "language": {
-            "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "No se encontraron registros",
-            "info": "Mostrando página _PAGE_ de _PAGES_",
-            "infoEmpty": "No hay registros disponibles",
-            "infoFiltered": "(filtrado de _MAX_ registros totales)",
-            "search": "Buscar:",
-            "paginate": {
-                "first": "Primero",
-                "last": "Último",
-                "next": "Siguiente",
-                "previous": "Anterior"
+        // Configuración de DataTable
+        $('#bonosFull').DataTable({
+            "order": [[ 0, "desc" ]],
+            "scrollX": true,
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros por página",
+                "zeroRecords": "No se encontraron registros",
+                "info": "Mostrando página _PAGE_ de _PAGES_",
+                "infoEmpty": "No hay registros disponibles",
+                "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                "search": "Buscar:",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Último",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
             }
-        }
+        });
+
+        // Función para descargar la tabla en formato Excel
+        $('#downloadExcel').on('click', function() {
+            // Obtener los datos de la tabla
+            var table = document.getElementById('bonosFull');
+            var ws = XLSX.utils.aoa_to_sheet([]);
+            var data = [];
+
+            // Recorrer las filas y columnas de la tabla
+            for (var i = 0; i < table.rows.length; i++) {
+                var rowData = [];
+                for (var j = 0; j < table.rows[i].cells.length - 1; j++) { // Omitir la última columna
+                    rowData.push(table.rows[i].cells[j].innerText);
+                }
+                data.push(rowData);
+            }
+
+            // Crear hoja de trabajo a partir de los datos
+            ws = XLSX.utils.aoa_to_sheet(data);
+
+            // Crear un libro de trabajo y añadir la hoja
+            var wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Donaciones");
+
+            // Descargar el archivo
+            XLSX.writeFile(wb, 'Informe Donaciones HKC.xlsx');
+        }); 
     });
-});
 </script>
+
 <style>
     th, td {
         white-space: nowrap; /* Evita el salto de línea en las celdas */
