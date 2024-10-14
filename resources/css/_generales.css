@@ -682,7 +682,7 @@ input::placeholder, textarea::placeholder {
 /* Media query para pantallas menores a 700px */
 @media (max-width: 900px) {
     .mobile-message {
-        display: flex; /* Muestra el mensaje en móviles */
+        display: flex; /* Muestra el mensaje en móviles */ 
     }
 }
 .desk-none{
