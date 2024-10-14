@@ -669,8 +669,8 @@ input::placeholder, textarea::placeholder {
     left: 0;
     right: 0;
     bottom: 0; /* Cubre toda la altura */
-    background-color: #A672D8; /* Color de fondo con opacidad */
-    color: #fbf6f6;
+    background-color: rgba(0, 0, 0); /* Color de fondo con opacidad */
+    color: #787878;
     text-align: center;
     padding: 20px;
     z-index: 50000; /* Asegura que esté encima de otros elementos */
