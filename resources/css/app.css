@@ -8,17 +8,12 @@
 /* Bootstrap*/
 
 @import './../../node_modules/bootstrap/dist/css/bootstrap.css';
-
 /* Bootstrap icons*/
-
 @import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 
 /* Generales*/
-
 @import './_generales.css';
-
 /* 3D*/
-
 @import './_3d.css';
 /*@import "~/node_modules/bootstrap/scss/bootstrap";*/
 
