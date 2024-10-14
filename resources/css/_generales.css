@@ -662,6 +662,30 @@ textarea::placeholder {
 input::placeholder, textarea::placeholder {
     font-size: 14px; /* Ajusta el tamaño del texto si es necesario */
 }
-.perro{
-    background-color: red;
+.mobile-message {
+    display: none; /* Oculta el mensaje por defecto */
+    position: fixed; /* Fija la posición en la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Cubre toda la altura */
+    background-color: rgba(0, 0, 0); /* Color de fondo con opacidad */
+    color: #787878;
+    text-align: center;
+    padding: 20px;
+    z-index: 50000; /* Asegura que esté encima de otros elementos */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    font-size: 30px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+}
+/* Media query para pantallas menores a 700px */
+@media (max-width: 900px) {
+    .mobile-message {
+        display: flex; /* Muestra el mensaje en móviles */ 
+    }
+}
+.desk-none{
+    display: flex;
+    flex-direction: column;
 }
