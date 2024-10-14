@@ -1,4 +1,4 @@
-<h3>Hola {{ Auth::user()->name }} aquí puedes actualizar tu contraseña</h3>
+<h3>Hola, {{ Auth::user()->name }}. Aquí puedes actualizar tu contraseña.</h3>
 <div>
     <p>Nombre: {{ Auth::user()->name }}</p>
     <p>Correo Electrónico: {{ Auth::user()->email }}</p>

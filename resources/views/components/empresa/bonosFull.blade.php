@@ -3,17 +3,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h1>Todas las donaciones</h1>
-            <table id="bonosFull" class="display ">
-                <thead>
+            <h1 class="text-center" >Todas las donaciones</h1>
+            <p class="mb-5 text-center" >  Aquí podrás ver todas las donaciones y sus datos para la administración de las mismas. Además, en la parte inferior de la tabla, <strong>tendrás un botón para descargar todas las donaciones en formato Excel </strong> y así tener un mayor control.</p>
+            
+                <table id="bonosFull" class="display ">
+                    <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Usuario</th>
-                        <th>Fecha de colección</th>
-                        <th>Hora de colección</th>
+                        <th>Donante</th>
+                        <th>Cuándo recoger</th>
+                        <th>Hora para recoger</th>
                         <th>Número de juguetes</th>
                         <th>Observaciones</th>
-                        <th>Estado</th>
+                        <th>Estado de donación</th>
                         <th>Acciones</th> <!-- Nueva columna para editar el estado -->
 
                         <!-- Agrega más columnas según tus datos -->
@@ -63,7 +65,7 @@
             "order": [[ 0, "desc" ]],
             "scrollX": true,
             "language": {
-                "lengthMenu": "Mostrar _MENU_ registros por página",
+                "lengthMenu": "Mostrar _MENU_ donaciones por página",
                 "zeroRecords": "No se encontraron registros",
                 "info": "Mostrando página _PAGE_ de _PAGES_",
                 "infoEmpty": "No hay registros disponibles",

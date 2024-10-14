@@ -3,6 +3,7 @@
 }
 body{
     overflow-x: hidden;
+    font-family: system-ui;
 }
 .grow-on-hover {
     transition: transform 0.3s ease;
@@ -635,4 +636,27 @@ input:focus::placeholder {
 }
 p.card-text {
     text-align: center;
+}
+.fs-14{
+    font-size: 14px;
+}
+::placeholder {
+    color: #0000006b !important; /* Color gris claro o el que prefieras */
+    opacity: 1;  /* Asegura que la opacidad sea 100% */
+}
+
+/* Cambiar color del placeholder en input específicamente */
+input::placeholder {
+    color: #0000006b !important;
+}
+
+/* Cambiar color del placeholder en textarea específicamente */
+textarea::placeholder {
+    color: #0000006b !important;
+    font-style: italic;
+}
+
+/* Puedes cambiar otros estilos también, como el tamaño de fuente */
+input::placeholder, textarea::placeholder {
+    font-size: 14px; /* Ajusta el tamaño del texto si es necesario */
 }

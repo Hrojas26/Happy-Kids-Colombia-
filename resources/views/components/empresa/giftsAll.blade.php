@@ -1,15 +1,15 @@
 <h1 class="">Bonos creados</h1>
-<p class="">Aquí podras ver todos los bonos que los donantes han creado</p>
+<p class="">Aquí se reflejarán todos los bonos creados para los donantes</p>
 
 <table id="gifts-table" class="display">
     <thead>
         <tr>
-            <th>id</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>URL Image</th>
-            <th>Estado</th>
-            <th>Fecha</th>
+            <th>Número</th>
+            <th>Nombre del bono</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <th>Estado del bono</th>
+            <th>Fecha de creación</th>
         </tr>
     </thead>
     <tbody>
@@ -51,17 +51,39 @@
             @endforeach
         @else
             <tr>
-                <td colspan="5">No hay bonos disponibles.</td>
+                <td colspan="6">No hay bonos disponibles.</td>
             </tr>
         @endif
     </tbody>
 </table>
+
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#gifts-table').DataTable({
             order: [
-                [0, 'desc']
-            ], // Índice 0 para la primera columna (ID)
+                [0, 'desc'] // Ordenar la primera columna (ID) en orden descendente
+            ],
+            language: {
+                "sProcessing":   "Procesando...",
+                "sLengthMenu":   "Mostrar _MENU_ registros",
+                "sZeroRecords":  "No se encontraron resultados",
+                "sEmptyTable":   "No hay datos disponibles en esta tabla",
+                "sInfo":         "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty":    "Mostrando registros del 0 al 0 ",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sSearch":       "Buscar:",
+                "oPaginate": {
+                    "sFirst":    "Primero",
+                    "sLast":     "Último",
+                    "sNext":     "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
         });
     });
 </script>

@@ -50,8 +50,8 @@
                     <!-- Crear usuario desde el admin -->
                     <div class="col-md-9" id="create-user-admin" style="display: none;">
                         <div class="container">
-                            <h1>Crea un usuario o una empresa</h1>
-                            <p>Crea usuarios y empresas desde este modulo</p>
+                            <h1>Crea un usuario</h1>
+                            <p class="mb-5" >Aquí podrás crear un usuario o una empresa. Luego de crearlo, si deseas ingresar, debes cerrar tu sesión de administrador</p>
                             @include('auth.passwords.registerAdmin')
                         </div>
                     </div>

@@ -62,7 +62,7 @@
                 <div class="card grow-on-hover">
                     <img src="{{ asset('img/card1.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">1. Registrate</h5>
+                        <h5 class="card-title">1. Regístrate</h5>
                         <p class="card-text">Crea tu cuenta en nuestra plataforma para empezar a donar. Completa el
                             formulario con tus datos y únete a la comunidad de donantes.</p>
                     </div>
@@ -73,7 +73,7 @@
                     <img src="{{ asset('img/card2.jpg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">2. Dona Juguetes</h5>
-                        <p class="card-text">Dona tus juguetes. No importa si son nuevos o usados, ya sea uno o muchos;
+                        <p class="card-text">Dona tus juguetes. No importa si son nuevos o usados; ya sea uno o muchos
                             tu contribución hará una gran diferencia en la vida de los niños.</p>
                     </div>
                 </div>
