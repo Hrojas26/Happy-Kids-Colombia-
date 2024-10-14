@@ -662,3 +662,6 @@ textarea::placeholder {
 input::placeholder, textarea::placeholder {
     font-size: 14px; /* Ajusta el tamaño del texto si es necesario */
 }
+.perro{
+    background-color: red;
+}
