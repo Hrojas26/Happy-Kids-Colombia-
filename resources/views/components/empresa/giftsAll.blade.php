@@ -62,8 +62,7 @@
     $(document).ready(function() {
         $('#gifts-table').DataTable({
             order: [
-                [0, 'desc'] // Ordenar la primera columna (ID) en orden descendente
-            ],
+                [0, 'desc']],
             language: {
                 "sProcessing":   "Procesando...",
                 "sLengthMenu":   "Mostrar _MENU_ registros",

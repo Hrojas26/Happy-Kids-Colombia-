@@ -46,12 +46,7 @@
     </tbody>
 </table>
 
-<label for="miSelect">Selecciona una opción:</label>
-<select id="miSelect">
-    <option value="opcion1">Opción 1</option>
-    <option value="opcion2">Opción 2</option>
-    <option value="opcion3">Opción 3</option>
-</select>
+
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -155,9 +150,32 @@ $(document).ready(function() {
 });
 </script>
 <script>
+ 
+
     $(document).ready(function() {
         $('#user-table').DataTable({
-            order: [[0, 'desc']], // Cambia el índice 0 si tu columna ID no es la primera
+            order: [
+                [0, 'desc']],
+            language: {
+                "sProcessing":   "Procesando...",
+                "sLengthMenu":   "Mostrar _MENU_ registros",
+                "sZeroRecords":  "No se encontraron resultados",
+                "sEmptyTable":   "No hay datos disponibles en esta tabla",
+                "sInfo":         "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty":    "Mostrando registros del 0 al 0 ",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sSearch":       "Buscar:",
+                "oPaginate": {
+                    "sFirst":    "Primero",
+                    "sLast":     "Último",
+                    "sNext":     "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
         });
     });
     </script>
