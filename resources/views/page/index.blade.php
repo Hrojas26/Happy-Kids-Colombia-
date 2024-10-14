@@ -21,6 +21,13 @@
 
 <body class="home">
 
+    <div class="mobile-message">
+        <div class="desk-none">
+            <i style="font-size: 60px; margin-bottom: 35px;" class="far fa-sad-tear"></i>
+            <strong>¡Oops! Disculpa, Happy Kids Colombia solo está disponible en versión Desktop.</strong>
+        </div>
+    </div>
+
     @if (auth()->check())
         @if (auth()->user()->rol === 'empresa')
             <script>

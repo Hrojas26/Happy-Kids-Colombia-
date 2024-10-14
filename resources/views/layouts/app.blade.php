@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -82,6 +83,7 @@
             </div>
         </nav>
         @include('components.cinta')
+        
 
         <main class="">
             @yield('content')

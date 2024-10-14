@@ -13,7 +13,7 @@
 </head>
 <body>
 @include('components.headerPage')
-<div class="container">
+<div class="container-fluid background-donar">
     <br>
     @include('components.formDonar')
     <br>

@@ -55,7 +55,7 @@
         <!-- Columna de la imagen -->
         <div class="col-md-6 d-flex flex-column align-items-center">
             <h5>¡Así lucirá tu bono!</h5>
-            <p class="text-center text-aligt-center">Aquí podrás ver en vivo cómo quedará tu bono luego de que lo crees. Empieza creando tu bono en la columna izquierda.</p>
+            <p class="text-center text-aligt-center">Aquí podrás ver en vivo cómo quedará tu bono al tiempo de que lo vayas creando. Empieza creando tu bono en la columna izquierda.</p>
             <div class="card bonostyle mt-3" style="width: 18rem;">
                 <h5 class="card-title center pt-2 pb-2 TittleCard" id="previewName">Nombre del bono</h5>
                 <div class="card-body">
