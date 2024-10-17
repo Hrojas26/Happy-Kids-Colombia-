@@ -12,7 +12,7 @@
                 <img src="{{ asset('img/nosotros.png') }}" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">¿Quiénes somos?</h5>
-                  <p class="card-text">¡Hola! Soy el encargado de crear cosas geniales aquí en Happy Kids Colombia. Mi misión es usar la tecnología para conectar a donantes con quienes lo necesitan.</p>
+                  <p class="card-text">¡Hola! Somos los encargados de crear cosas geniales aquí en Happy Kids Colombia. Nuestra misión es usar la tecnología para conectar a donantes con quienes lo necesitan.</p>
                   <a href="{{ route('nosotros') }}" id="btnosotros" class="btn btn-dark">¡ VAMOS !</a>
                 </div>
               </div>
