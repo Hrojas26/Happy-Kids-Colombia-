@@ -70,6 +70,8 @@ Route::post('/crear-bono', [GiftsController::class, 'create'])->name('crear.bono
 Route::post('/crear-user', [CretaeUserController::class, 'createUsuario'])->name('crear.user');
 
 Route::get('/gifts-all', [GiftsController::class, 'store'])->name('gifts.all');
+Route::post('/gifts-all/gifts', [GiftsController::class, 'update'])->name('edit.gifts');
+Route::delete('/gifts-all/gifts/{gifts}', [GiftsController::class, 'destroy'])->name('destroy.gifts');
 Route::get('/user-all', [UserController::class, 'all'])->name('user.all');
 
 
@@ -84,6 +86,7 @@ Auth::routes();
 Route::post('/update-password', [UpdatePasswordController::class, 'update'])->name('update.password');
 Route::post('/reclamar-bono', [GiftUserController::class, 'create'])->name('reclama.bono');
 Route::post('/edit-all', [UserController::class, 'saveUserEdit'])->name('edit.user');
+
 Route::put('/donations/{donation}', [DonationController::class, 'updateStatus'])->name('updateStatus');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gifts;
+use Illuminate\Support\Facades\Log;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\URL;
+use Ramsey\Uuid\Type\Integer;
 
 class GiftsController extends Controller
 {
@@ -92,9 +95,42 @@ class GiftsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Gifts $gifts)
+    public function update(Request $request)
     {
-        //
+        $id = $request->input('id');
+        $name = $request->input('name');
+        $description = $request->input('description');
+        $state = $request->input('state');
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'state' => 'required|integer',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de la imagen
+
+        ]);
+        $gift = Gifts::find($id);
+        if (!$gift) {
+            return response()->json(['success' => false, 'message' => 'Bono no encontrado'], 404);
+        }
+        Log::error($request);
+        $imagenNombre = time() . '.' . $request->image->extension(); // Nombre único para la imagen
+        $request->image->move(public_path('storage/images/'), $imagenNombre);
+        $urlImagen = URL::to('/') . '/storage/images/' . $imagenNombre;
+
+
+        $gift->name = $name;
+        $gift->description = $description;
+        $gift->state =  $state;
+        $gift->urlimage = $urlImagen;
+
+        try {
+            $gift->save();
+            $gifts = Gifts::where('state', 1)->get();
+            return response()->json(['success' => true, 'gifts' => $gifts]);
+        } catch (\Exception $e) {
+
+            return response()->json(['success' => false, 'message' => 'Error al guardar los cambios'], 500);
+        }
     }
 
     /**
@@ -102,6 +138,14 @@ class GiftsController extends Controller
      */
     public function destroy(Gifts $gifts)
     {
-        //
+        Log::error($gifts);
+        try {
+            $gifts->delete();
+            $gifts = Gifts::where('state', 1)->get();
+            return response()->json(['success' => true, 'gifts' => $gifts]);
+        } catch (\Exception $e) {
+
+            return response()->json(['success' => false, 'message' => 'Error al Eliminar el Bono'], 500);
+        }
     }
 }
