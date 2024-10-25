@@ -16,4 +16,6 @@
 /* 3D*/
 @import './_3d.css';
 /*@import "~/node_modules/bootstrap/scss/bootstrap";*/
-
+#gifts-table_wrapper{
+    overflow-y: auto;
+}
