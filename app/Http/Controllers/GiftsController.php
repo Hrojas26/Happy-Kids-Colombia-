@@ -105,7 +105,7 @@ class GiftsController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'state' => 'required|integer',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de la imagen
+            //'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de la imagen
 
         ]);
         $gift = Gifts::find($id);
@@ -113,15 +113,15 @@ class GiftsController extends Controller
             return response()->json(['success' => false, 'message' => 'Bono no encontrado'], 404);
         }
         Log::error($request);
-        $imagenNombre = time() . '.' . $request->image->extension(); // Nombre único para la imagen
+        /* $imagenNombre = time() . '.' . $request->image->extension(); // Nombre único para la imagen
         $request->image->move(public_path('storage/images/'), $imagenNombre);
         $urlImagen = URL::to('/') . '/storage/images/' . $imagenNombre;
-
+*/
 
         $gift->name = $name;
         $gift->description = $description;
         $gift->state =  $state;
-        $gift->urlimage = $urlImagen;
+        // $gift->urlimage = $urlImagen;
 
         try {
             $gift->save();

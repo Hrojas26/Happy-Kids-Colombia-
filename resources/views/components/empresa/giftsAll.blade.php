@@ -28,7 +28,7 @@
                             data-id="{{ $gift->id }}">{{ $gift->description }}</span>
                     </td>
                     <td>
-                        <span class="editable" data-field="image">
+                        <span  data-field="image">
                             <img src="{{ $gift->urlimage }}" alt="{{ $gift->name }}" style="width: 50px;">
 
                         </span>
